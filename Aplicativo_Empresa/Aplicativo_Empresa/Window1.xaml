@@ -1,0 +1,24 @@
+﻿<Window x:Class="Aplicativo_Empresa.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Aplicativo_Empresa"
+        mc:Ignorable="d"
+        Title="Window1" Height="450" Width="800">
+    <Grid x:Name="Window">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF464D95" Offset="0"/>
+                <GradientStop Color="#FF030017" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Image Margin="57,63,516,109" Source="SM.png" Stretch="Fill"/>
+        <Label Content="BIENVENIDOS USUARIOS" HorizontalAlignment="Left" Margin="342,41,0,0" VerticalAlignment="Top" Width="238" FontSize="22" FontFamily="Tw Cen MT Condensed Extra Bold" Height="34"/>
+        <Button x:Name="button_visitas" Content="MODULO VISITAS&#xA;" HorizontalAlignment="Left" Margin="317,100,0,0" VerticalAlignment="Top" Width="263" Height="45" FontFamily="Imprint MT Shadow" FontSize="20" Background="#FF356D9B" Click="Button_visitas_Click"/>
+        <Button x:Name="button_compra" Content="MODULO COMPRA Y VENTA" HorizontalAlignment="Left" Margin="317,169,0,0" VerticalAlignment="Top" Width="263" Height="61" FontFamily="Imprint MT Shadow" FontSize="17" Click="Button_Click" Background="#FF437B97"/>
+        <Button x:Name="button_servicios" Content="MODULO SERVICIOS" HorizontalAlignment="Left" Margin="317,253,0,0" VerticalAlignment="Top" Width="263" Height="57" Click="Button_Click_1" FontFamily="Imprint MT Shadow" FontSize="15" Background="#FF447BA0"/>
+        <Button x:Name="button_back" Content="Atras" HorizontalAlignment="Left" Margin="638,25,0,0" VerticalAlignment="Top" Width="106" FontSize="15" FontFamily="Times New Roman" Click="Button_back_Click" Height="30"/>
+
+    </Grid>
+</Window>

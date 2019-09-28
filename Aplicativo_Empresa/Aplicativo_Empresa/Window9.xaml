@@ -1,0 +1,25 @@
+﻿<Window x:Class="Aplicativo_Empresa.Window9"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Aplicativo_Empresa"
+        mc:Ignorable="d"
+        Title="Window9" Height="450" Width="800">
+    <Grid>
+        <Grid>
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF686868" Offset="0"/>
+                    <GradientStop Color="#FF1F1B1B" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <Label Content="INFORME DE PRODUCTOS" HorizontalAlignment="Left" Margin="305,5,0,0" VerticalAlignment="Top" Width="323" FontFamily="Times New Roman" FontSize="25"/>
+            <Image Margin="10,10,721,349" Source="SM.png" Stretch="Fill"/>
+            <ListBox HorizontalAlignment="Left" Height="327" Margin="10,82,0,0" VerticalAlignment="Top" Width="772" FontFamily="Arial"/>
+            <Label Content="Lista de Clientes" HorizontalAlignment="Left" Margin="85,43,0,0" VerticalAlignment="Top" Width="117" FontFamily="Times New Roman" FontSize="15"/>
+            <Button x:Name="button_atras" Content="Atras" HorizontalAlignment="Left" Margin="678,10,0,0" VerticalAlignment="Top" Width="75" Height="23" FontFamily="Times New Roman" FontSize="15" Click="Button_Click"/>
+        </Grid>
+
+    </Grid>
+</Window>

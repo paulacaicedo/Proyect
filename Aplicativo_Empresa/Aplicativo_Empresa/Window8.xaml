@@ -1,0 +1,68 @@
+﻿<Window x:Class="Aplicativo_Empresa.Window8"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Aplicativo_Empresa"
+        mc:Ignorable="d"
+        Title="Window8" Height="450" Width="800">
+    <Grid>
+        <Grid RenderTransformOrigin="0.434,0.895">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF737781" Offset="0"/>
+                    <GradientStop Color="#FF2A2C32" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <Image Margin="10,10,672,298" Source="SM.png" Stretch="Fill"/>
+            <Label Content="FACTURA DE COMPRA" HorizontalAlignment="Left" Margin="301,10,0,0" VerticalAlignment="Top" Height="35" Width="242" FontSize="21" FontFamily="Times New Roman"/>
+            <Label Content="Fecha" HorizontalAlignment="Left" Margin="143,41,0,0" VerticalAlignment="Top" Width="53" Height="26" FontSize="15" FontFamily="Times New Roman"/>
+            <Label Content="Cliente" HorizontalAlignment="Left" Margin="143,72,0,0" VerticalAlignment="Top" Width="53" FontFamily="Times New Roman" FontSize="15" Height="35"/>
+            <TextBox x:Name="textbox_client" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="342" Margin="201,76,0,0" FontFamily="Arial"/>
+            <Label Content="Vendedor" HorizontalAlignment="Left" Margin="452,44,0,0" VerticalAlignment="Top" Width="72" FontFamily="Times New Roman" FontSize="15"/>
+            <TextBox x:Name="textbox_seller" HorizontalAlignment="Left" Height="23" Margin="543,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="205" FontFamily="Arial"/>
+            <Label Content="Asistente Cliente" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="6.202,7.348" Margin="134,107,0,0" Width="121" FontFamily="Times New Roman" FontSize="15" Height="30"/>
+            <TextBox x:Name="textbox_asistent" HorizontalAlignment="Left" Height="23" Margin="260,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="261" FontFamily="Arial"/>
+            <Label Content="N°Factura" HorizontalAlignment="Left" Margin="283,44,0,0" VerticalAlignment="Top" Width="77" RenderTransformOrigin="0.524,0.24" FontFamily="Times New Roman" FontSize="15"/>
+            <TextBox x:Name="textbox_factura" HorizontalAlignment="Left" Height="23" Margin="360,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="87"/>
+            <Label Content="Direccion" HorizontalAlignment="Left" Margin="526,107,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="15" RenderTransformOrigin="0.28,0.577" Width="86"/>
+            <TextBox x:Name="textbox_adress" HorizontalAlignment="Left" Height="23" Margin="604,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164" RenderTransformOrigin="0.489,1.144" FontFamily="Times New Roman" FontSize="15"/>
+            <Label Content="Telefono" HorizontalAlignment="Left" Margin="563,72,0,0" VerticalAlignment="Top" Width="89" FontFamily="Times New Roman" FontSize="15"/>
+            <TextBox x:Name="textbox_phone" HorizontalAlignment="Left" Height="23" Margin="634,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" FontFamily="Arial"/>
+            <Label Content="# Producto" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,142,271,0" Width="89" FontFamily="Times New Roman" FontSize="15" RenderTransformOrigin="0.538,-0.092"/>
+            <Label Content="Marca" HorizontalAlignment="Left" Margin="223,140,0,0" VerticalAlignment="Top" Width="54" FontFamily="Times New Roman" FontSize="15"/>
+            <Button x:Name="button_atras" Content="Atras" HorizontalAlignment="Left" Margin="678,10,0,0" VerticalAlignment="Top" Width="75" Height="23" FontFamily="Times New Roman" FontSize="15" Click="Button_Click"/>
+            <Label Content="Linea" HorizontalAlignment="Left" Margin="27,140,0,0" VerticalAlignment="Top" Width="52" FontSize="15" FontFamily="Times New Roman"/>
+            <ComboBox x:Name="combobox_linea" HorizontalAlignment="Left" Margin="84,142,0,0" VerticalAlignment="Top" Width="134" Height="27">
+                <Label Content="HARDWARE" FontFamily="Times New Roman" FontSize="15"/>
+                <Label Content="SOFTWARE" FontFamily="Times New Roman" FontSize="15"/>
+                <Label Content="CONSUMIBLE" FontFamily="Times New Roman" FontSize="15"/>
+            </ComboBox>
+            <TextBox x:Name="textbox_mark" HorizontalAlignment="Left" Height="27" Margin="283,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="126" FontFamily="Arial" FontSize="15"/>
+            <TextBox x:Name="textbox_product" HorizontalAlignment="Left" Height="27" Margin="526,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="126" FontFamily="Times New Roman" FontSize="15"/>
+            <Label Content="Descripcion" HorizontalAlignment="Left" Margin="27,187,0,0" VerticalAlignment="Top" Width="93" FontFamily="Times New Roman" FontSize="15"/>
+            <TextBox x:Name="textbox_descrip" HorizontalAlignment="Left" Height="168" Margin="27,219,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="291" RenderTransformOrigin="0.541,0.193"/>
+            <Label Content="Cantidad" HorizontalAlignment="Left" Margin="331,187,0,0" VerticalAlignment="Top" Width="74" FontFamily="Times New Roman" FontSize="15" Height="27"/>
+            <TextBox x:Name="textbox_quantity" HorizontalAlignment="Left" Height="27" Margin="410,187,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="92" FontFamily="Arial" FontSize="15"/>
+            <Label Content="Costo Antes de IVA" HorizontalAlignment="Left" Margin="331,234,0,0" VerticalAlignment="Top" Width="138" FontFamily="Times New Roman" FontSize="15"/>
+            <Label Content="IVA" HorizontalAlignment="Left" Margin="614,234,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="15"/>
+            <Label Content="Precio Total" HorizontalAlignment="Left" Margin="331,280,0,0" VerticalAlignment="Top" Width="93" FontFamily="Times New Roman" FontSize="15"/>
+            <Label Content="Estado de Compra" HorizontalAlignment="Left" Margin="331,324,0,0" VerticalAlignment="Top" Width="126" FontFamily="Times New Roman" FontSize="15"/>
+            <ComboBox x:Name="comboBox_state" HorizontalAlignment="Left" Margin="457,324,0,0" VerticalAlignment="Top" Width="141" Height="27">
+                <Label Content="Por comprar" FontFamily="Times New Roman" FontSize="15"/>
+                <Label Content="Comprado" FontFamily="Times New Roman" FontSize="15"/>
+            </ComboBox>
+            <Button x:Name="button_guardar" Content="Guardar" HorizontalAlignment="Left" Margin="633,278,0,0" VerticalAlignment="Top" Width="120" Height="45" FontFamily="Times New Roman" FontSize="20" Click="Button_guardar_Click"/>
+            <Button x:Name="button_cancel" Content="Cancelar" HorizontalAlignment="Left" Margin="634,345,0,0" VerticalAlignment="Top" Width="119" Height="42" FontFamily="Times New Roman" FontSize="20" Click="Button_cancel_Click"/>
+            <Label x:Name="label_date" Content="" HorizontalAlignment="Left" Margin="193,40,0,0" VerticalAlignment="Top" Width="84" FontFamily="Times New Roman" FontSize="15" Background="#FFF0EAEA"/>
+            <TextBox x:Name="textbox_unitvalue" HorizontalAlignment="Left" Height="23" Margin="648,187,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <Label Content="Valor Unitario" HorizontalAlignment="Left" Margin="543,184,0,0" VerticalAlignment="Top" Width="98" FontFamily="Times New Roman" FontSize="15"/>
+            <Label x:Name="labeltext_total" Content="" HorizontalAlignment="Left" Margin="457,280,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.163,-0.056" Width="141" Background="White"/>
+            <Label x:Name="labeltext_total_Copy" Content="" HorizontalAlignment="Left" Margin="457,280,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.163,-0.056" Width="141" Background="White"/>
+            <Label x:Name="labeltext_total_Copy1" Content="" HorizontalAlignment="Left" Margin="457,280,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.163,-0.056" Width="141" Background="White"/>
+            <Label x:Name="labeltext_beforeIva" Content="" HorizontalAlignment="Left" Margin="474,234,0,0" VerticalAlignment="Top" Width="124" Background="#FFF5EEEE"/>
+            <Label x:Name="label_iva" Content="" HorizontalAlignment="Left" Margin="678,234,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.068,0.433" Width="75" Background="#FFF9EEEE" FontFamily="Arial"/>
+
+        </Grid>
+    </Grid>
+</Window>
