@@ -29,7 +29,7 @@ namespace Aplicativo_Empresa
             Window2 Window1 = new Window2();
             this.Hide();
             Window1.ShowDialog();
-            this.Show();
+            
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -37,7 +37,7 @@ namespace Aplicativo_Empresa
             Window3 Window2 = new Window3();
             this.Hide();
             Window2.ShowDialog();
-            this.Show();
+            
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -45,7 +45,7 @@ namespace Aplicativo_Empresa
             Window4 Window3 = new Window4();
             this.Hide();
             Window3.ShowDialog();
-            this.Show();
+            
         }
 
         private void Button_back_Click(object sender, RoutedEventArgs e)
@@ -53,7 +53,7 @@ namespace Aplicativo_Empresa
             Window atras = new Window();
             this.Hide();
             atras.ShowDialog();
-            this.Show();
+            
         }
     }
 }

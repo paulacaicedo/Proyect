@@ -29,7 +29,7 @@ namespace Aplicativo_Empresa
             Window1 atras = new Window1();
             this.Hide();
             atras.ShowDialog();
-            this.Show();
+            
         }
 
         private void Button_GenerarFactura_Click(object sender, RoutedEventArgs e)
@@ -37,7 +37,7 @@ namespace Aplicativo_Empresa
             Window8 Window1 = new Window8();
             this.Hide();
             Window1.ShowDialog();
-            this.Show();
+            
         }
 
         private void Button_InformeProductos_Click(object sender, RoutedEventArgs e)
@@ -45,7 +45,7 @@ namespace Aplicativo_Empresa
             Window9 Window2 = new Window9();
             this.Hide();
             Window2.ShowDialog();
-            this.Show();
+            
         }
     }
 }

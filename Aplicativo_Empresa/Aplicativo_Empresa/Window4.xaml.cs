@@ -29,7 +29,7 @@ namespace Aplicativo_Empresa
             Window1 atras = new Window1();
             this.Hide();
             atras.ShowDialog();
-            this.Show();
+            
         }
 
         private void Button_AntesServicio_Click(object sender, RoutedEventArgs e)
@@ -37,7 +37,7 @@ namespace Aplicativo_Empresa
             Window10 Window1 = new Window10();
             this.Hide();
             Window1.ShowDialog();
-            this.Show();
+            
         }
 
         private void Button_InformeServicio_Click(object sender, RoutedEventArgs e)
@@ -45,7 +45,7 @@ namespace Aplicativo_Empresa
             Window12 Window2 = new Window12();
             this.Hide();
             Window2.ShowDialog();
-            this.Show();
+           
         }
     }
 }

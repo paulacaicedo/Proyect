@@ -38,7 +38,7 @@ namespace Aplicativo_Empresa
             Window3 atras = new Window3();
             this.Hide();
             atras.ShowDialog();
-            this.Show();
+            
         }
 
         private void Button_guardar_Click(object sender, RoutedEventArgs e)
@@ -111,7 +111,7 @@ namespace Aplicativo_Empresa
                 return;
             }
 
-            Regex re = new Regex("^[0-5a-zA-Z\\s]*$");
+            Regex re = new Regex("^[0-9a-zA-Z\\s]*$");
             Regex r = new Regex("^[a-zA-Z\\s]*$");
 
             //Validadcion de solo caracteres alfabeticos
@@ -152,18 +152,32 @@ namespace Aplicativo_Empresa
                 textbox_phone.Focus();
                 return;
             }
-            if (!r.IsMatch(textbox_adress.Text))
+            if (!re.IsMatch(textbox_adress.Text))
             {
                 MessageBox.Show("La direccion sólo debe tener caracteres especiales ");
                 textbox_adress.Focus();
                 return;
             }
-            if (!r.IsMatch(textbox_product.Text))
+            if (!re.IsMatch(textbox_product.Text))
             {
                 MessageBox.Show("El nombre serial del producto sólo debe tener caracteres especiales");
                 textbox_product.Focus();
                 return;
             }
+
+            //Validacion de ComboBox
+            bool item = Convert.ToBoolean(combobox_linea);
+            if (item == false)
+            {
+                MessageBox.Show("Linea esta vacio");
+            }
+
+            bool item1 = Convert.ToBoolean(comboBox_state);
+            if (item1 == false)
+            {
+                MessageBox.Show("Estado de Compra esta vacio");
+            }
+
 
             labeltext_total.Visibility = Visibility.Visible;
             labeltext_beforeIva.Visibility = Visibility.Visible;
@@ -204,12 +218,28 @@ namespace Aplicativo_Empresa
                 Window2 cerrar = new Window2();
                 this.Hide();
                 cerrar.ShowDialog();
-                this.Show();
+                
             }
             else
             {
                 this.Close();
             }
+        }
+
+        private void Button_newFac_Click(object sender, RoutedEventArgs e)
+        {
+            textbox_seller.Clear();
+            textbox_client.Clear();
+            textbox_asistent.Clear();
+            textbox_adress.Clear();
+            textbox_phone.Clear();
+            textbox_mark.Clear();
+            textbox_product.Clear();
+            textbox_descrip.Clear();
+            textbox_quantity.Clear();
+            textbox_unitvalue.Clear();
+            
+
         }
     }
 }

@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace Aplicativo_Empresa
 {
@@ -19,10 +20,12 @@ namespace Aplicativo_Empresa
     /// </summary>
     public partial class Window9 : Window
     {
+        private List<Factura_Compra> fa_compra;
         public Window9()
         {
             InitializeComponent();
             Llenar();
+            
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -30,17 +33,28 @@ namespace Aplicativo_Empresa
             Window3 atras = new Window3();
             this.Hide();
             atras.ShowDialog();
-            this.Show();
+            
         }
 
         private void Llenar()
         {
-            List<Factura_Compra> facturas = new List<Factura_Compra>();
-            facturas.Add();
+            string line;
 
+            StreamReader sr = new StreamReader(AppDomain.CurrentDomain.BaseDirectory + "\\Factura_Compra.txt", Encoding.UTF8);
+            fa_compra = new List<Factura_Compra>();
 
-
+            while ((line = sr.ReadLine()) != null)
+            {
+                string[] datos = line.Split(';');
+                MessageBox.Show(line);
+                listBox_client.Items.Add(line);
+            }
+            sr.Close();
 
         }
+
+        
+
+        
     }
 }

@@ -58,7 +58,7 @@ namespace Aplicativo_Empresa
             Window1 Window = new Window1();
             this.Hide();
             Window.ShowDialog();
-            this.Show();
+            
 
         }
 

@@ -33,7 +33,7 @@ namespace Aplicativo_Empresa
             Window2 atras = new Window2();
             this.Hide();
             atras.ShowDialog();
-            this.Show();
+            
         }
 
         // Validacion de campos vacios
@@ -151,7 +151,7 @@ namespace Aplicativo_Empresa
                 Window2 cerrar = new Window2();
                 this.Hide();
                 cerrar.ShowDialog();
-                this.Show();
+               
             }
             else
             {

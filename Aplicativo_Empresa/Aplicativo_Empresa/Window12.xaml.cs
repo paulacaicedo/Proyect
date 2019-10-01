@@ -29,7 +29,7 @@ namespace Aplicativo_Empresa
             Window4 atras = new Window4();
             this.Hide();
             atras.ShowDialog();
-            this.Show();
+            
         }
     }
 }
