@@ -13,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Newtonsoft.Json;
 
 namespace Aplicativo_Empresa
 {
@@ -21,11 +22,18 @@ namespace Aplicativo_Empresa
     /// </summary>
     public partial class Window6 : Window
     {
+        static private List<ReporteVisitas> reporteLlegada = new List<ReporteVisitas>();
+        static string date;
+        static string hour;
+
         public Window6()
         {
             InitializeComponent();
             label_date.Content = DateTime.Now.ToString("dd/MM/yyyy");
             label_time.Content = DateTime.Now.ToShortTimeString();
+
+            date = DateTime.Now.ToString("dd/MM/yyyy");
+            hour = DateTime.Now.ToShortTimeString();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -99,64 +107,43 @@ namespace Aplicativo_Empresa
                 textbox_seller.Focus();
                 return;
             }
-
-            if (!r.IsMatch(textbox_place.Text))
-            {
-                MessageBox.Show("La marca sólo debe tener caracteres alfabéticos ");
-                textbox_place.Focus();
-                return;
-            }
             if (!r.IsMatch(textbox_topic.Text))
             {
-                MessageBox.Show("La marca sólo debe tener caracteres alfabéticos ");
+                MessageBox.Show("El tema sólo debe tener caracteres alfabéticos ");
                 textbox_topic.Focus();
                 return;
             }
-            if (!r.IsMatch(textbox_finalreport.Text))
-            {
-                MessageBox.Show("La marca sólo debe tener caracteres alfabéticos ");
-                textbox_finalreport.Focus();
-                return;
-            }
-            if (!r.IsMatch(textbox_finalecompromise.Text))
-            {
-                MessageBox.Show("La marca sólo debe tener caracteres alfabéticos ");
-                textbox_finalecompromise.Focus();
-                return;
-            }
 
-            Cliente newClient = new Cliente(textbox_client.Text, textbox_asistent.Text, textbox_topic.Text);
-            MessageBox.Show(newClient.ToString());
+            ReporteVisitas newVisit = new ReporteVisitas(date,hour,textbox_client.Text.ToString(),textbox_asistent.Text.ToString(),textbox_topic.Text.ToString(),textbox_place.Text.ToString());
+            reporteLlegada.Add(newVisit);
+            MessageBox.Show(newVisit.ToString());
 
-            
-            try
-            {
-                StreamWriter sw = new StreamWriter(AppDomain.CurrentDomain.BaseDirectory + "\\ReporteVisitasLLegada.txt", append: true);
-                sw.WriteLine(newClient.ToString());
-                sw.Close();
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Hubo un error con el archivo y no se pudo registrar");
-            }
-            
+            string registroJSON = JsonConvert.SerializeObject(reporteLlegada);
+            File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + "\\Reporte.json", registroJSON);
+
+
 
         }
 
         private void Button_cancel_Click(object sender, RoutedEventArgs e)
         {
-            MessageBoxResult result = MessageBox.Show("Realmente desea salir?", "Alerta", MessageBoxButton.OKCancel);
+            MessageBoxResult result = MessageBox.Show("Realmente desea eliminar la planilla?", "Alerta", MessageBoxButton.OKCancel);
             if (result == MessageBoxResult.OK)
             {
-                Window2 cerrar = new Window2();
-                this.Hide();
-                cerrar.ShowDialog();
-               
+                textbox_asistent.Clear();
+                textbox_client.Clear();
+                textbox_seller.Clear();
+                textbox_finalecompromise.Clear();
+                textbox_place.Clear();
+                textbox_finalreport.Clear();
+                textbox_topic.Clear();
+
             }
             else
             {
                 this.Close();
             }
+
         }
     }
 }

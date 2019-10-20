@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.IO;
+using Newtonsoft.Json;
 
 namespace Aplicativo_Empresa
 {
@@ -19,9 +21,11 @@ namespace Aplicativo_Empresa
     /// </summary>
     public partial class Window7 : Window
     {
+       
         public Window7()
         {
             InitializeComponent();
+            LlenarData();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -31,5 +35,34 @@ namespace Aplicativo_Empresa
             atras.ShowDialog();
             this.Show();
         }
+
+        private List<ReporteVisitas> LoadCollectionData()
+        {
+            List<ReporteVisitas> reporteSalida = new List<ReporteVisitas>();
+            string archivo = @"ReporteSalida.json";
+            using (StreamReader r = new StreamReader(archivo))
+            {
+                var ArchivoJSON = r.ReadToEnd();
+                reporteSalida = JsonConvert.DeserializeObject<List<ReporteVisitas>>(ArchivoJSON);
+
+
+            }
+            return reporteSalida;
+        }
+
+        private void LlenarData()
+        {
+
+            datagrid_report.ItemsSource = LoadCollectionData();
+
+
+        }
+
+
+
+
+
+
+
     }
 }

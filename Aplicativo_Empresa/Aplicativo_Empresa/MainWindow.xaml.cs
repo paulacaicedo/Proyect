@@ -25,8 +25,7 @@ namespace Aplicativo_Empresa
             InitializeComponent();
         }
 
-        public string username = "luisa";
-        public string verpassword = "398832";
+        static Vendedor[] usuarios = new Vendedor[4] { new Vendedor("luisa", "398832"), new Vendedor("yolima", "398832"), new Vendedor("viviana", "398832"), new Vendedor("erika", "398832") };
 
         private void Button_login_Click(object sender, RoutedEventArgs e)
         {
@@ -42,24 +41,30 @@ namespace Aplicativo_Empresa
                 return;
             }
 
-            if (
-                textbox_username.Text.Equals(username) &&
-                password.Password.Equals(verpassword)
-                )
+            bool flag = false;
+            for (int i=0; i<usuarios.Length; i++)
             {
-                MessageBox.Show("Inicio Sesion");
-            }
-            else
-            {
-                MessageBox.Show("Contraseña o Usuario Incorrectos");
-                return;
+                if (
+                    textbox_username.Text.Equals(usuarios[i].Name) &&
+                    password.Password.Equals(usuarios[i].Password)
+                    )
+                {
+                    flag = true;
+                    MessageBox.Show("Inicio Sesion");
+                    break;
+
+                }
+                if (!flag)
+                {
+                    MessageBox.Show("Error");
+                    return;
+                }
             }
 
             Window1 Window = new Window1();
             this.Hide();
             Window.ShowDialog();
             
-
         }
 
         private void Textbox_username_GotKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)

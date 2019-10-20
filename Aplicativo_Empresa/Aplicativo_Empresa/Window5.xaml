@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Aplicativo_Empresa"
         mc:Ignorable="d"
-        Title="Window5" Height="450" Width="800">
+        Title="Planilla Salida" Height="450" Width="800" Icon="SM.png" ResizeMode="NoResize">
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -23,16 +23,16 @@
         <Label Content="Asistente Cliente" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="6.202,7.348" Margin="156,157,0,0" Width="121" FontFamily="Times New Roman" FontSize="15" Height="30"/>
         <TextBox x:Name="textbox_asistent" HorizontalAlignment="Left" Height="23" Margin="282,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="261" FontFamily="Arial"/>
         <Label Content="Hora" HorizontalAlignment="Left" Margin="297,69,0,0" VerticalAlignment="Top" Width="63" RenderTransformOrigin="0.524,0.24" FontFamily="Times New Roman" FontSize="15"/>
-        <Label Content="Lugar" HorizontalAlignment="Left" Margin="563,156,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="15" RenderTransformOrigin="0.28,0.577"/>
-        <TextBox x:Name="textbox_place" HorizontalAlignment="Left" Height="23" Margin="619,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="149" RenderTransformOrigin="0.489,1.144" FontFamily="Times New Roman" FontSize="15"/>
+        <Label Content="Lugar" HorizontalAlignment="Left" Margin="548,160,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="15" RenderTransformOrigin="0.28,0.577"/>
+        <TextBox x:Name="textbox_place" HorizontalAlignment="Left" Height="23" Margin="599,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="183" RenderTransformOrigin="0.489,1.144" FontFamily="Times New Roman" FontSize="15"/>
         <Label Content="Tema Visita" HorizontalAlignment="Left" Margin="27,194,0,0" VerticalAlignment="Top" Width="89" FontFamily="Times New Roman" FontSize="15"/>
-        <TextBox x:Name="textbox_topic" HorizontalAlignment="Left" Height="23" Margin="121,199,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" FontFamily="Arial"/>
+        <TextBox x:Name="textbox_topic" HorizontalAlignment="Left" Height="23" Margin="121,199,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="171" FontFamily="Arial"/>
         <Label Content="Informe" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,227,672,0" Width="89" FontFamily="Times New Roman" FontSize="15" RenderTransformOrigin="0.538,-0.092"/>
         <TextBox x:Name="textbox_report" HorizontalAlignment="Left" Height="141" Margin="27,254,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="333" FontFamily="Arial"/>
         <Label Content="Acuerdos y Compromisos" HorizontalAlignment="Left" Margin="398,195,0,0" VerticalAlignment="Top" Width="172" FontFamily="Times New Roman" FontSize="15"/>
         <TextBox x:Name="textbox_compromise" HorizontalAlignment="Left" Height="140" Margin="383,227,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="370" FontFamily="Arial"/>
         <Button x:Name="button_atras" Content="Atras" HorizontalAlignment="Left" Margin="678,10,0,0" VerticalAlignment="Top" Width="75" Height="23" FontFamily="Times New Roman" FontSize="15" Click="Button_Click"/>
-        <Button x:Name="button_guardar" Content="Guardar" HorizontalAlignment="Left" Margin="471,382,0,0" VerticalAlignment="Top" Width="109" Height="27" FontFamily="Times New Roman" FontSize="20" Click="Button_guardar_Click"/>
+        <Button x:Name="button_guardar" Content="Guardar" HorizontalAlignment="Left" Margin="471,382,0,10" Width="109" FontFamily="Times New Roman" FontSize="20" Click="Button_guardar_Click"/>
         <Button x:Name="button_cancel" Content="Cancelar" HorizontalAlignment="Left" Margin="619,382,0,0" VerticalAlignment="Top" Width="104" Height="27" FontFamily="Times New Roman" FontSize="20" Click="Button_cancel_Click"/>
         <Label x:Name="label_date" Content="" HorizontalAlignment="Left" Margin="208,70,0,0" VerticalAlignment="Top" Width="84" FontFamily="Times New Roman" FontSize="15" Background="#FFF0EAEA"/>
         <Label x:Name="label_time" Content="" HorizontalAlignment="Left" Margin="343,70,0,0" VerticalAlignment="Top" Width="101" FontFamily="Times New Roman" FontSize="15" Background="#FFF5EEEE"/>

@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.IO;
+using Newtonsoft.Json;
 
 namespace Aplicativo_Empresa
 {
@@ -19,17 +21,43 @@ namespace Aplicativo_Empresa
     /// </summary>
     public partial class Window12 : Window
     {
+        
+        
         public Window12()
         {
             InitializeComponent();
+            Llenar();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private List<Factura_Servicios> LoadCollectionData()
         {
-            Window4 atras = new Window4();
-            this.Hide();
-            atras.ShowDialog();
-            
+            List<Factura_Servicios> fa_servicios = new List<Factura_Servicios>();
+            string archivo = @"Servicios.json";
+            using (StreamReader r = new StreamReader(archivo))
+            {
+                var ArchivoJSON = r.ReadToEnd();
+                MessageBox.Show("Así llega del archivo Json: \n" + ArchivoJSON.ToString());
+                fa_servicios = JsonConvert.DeserializeObject<List<Factura_Servicios>>(ArchivoJSON);
+
+
+            }
+            return fa_servicios;
         }
+
+        private void LlenarData()
+        {
+
+            datagrid_service.ItemsSource = LoadCollectionData();
+
+
+        }
+
+        private void Button_atras_Click(object sender, RoutedEventArgs e)
+        {
+            Window10 mw = new Window10();
+            this.Hide();
+            mw.ShowDialog();
+        }
+
     }
 }

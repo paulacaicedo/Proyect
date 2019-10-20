@@ -6,30 +6,29 @@ using System.Text;
 namespace Aplicativo_Empresa
 {
 
-    public class Factura_Compra : Factura
+    public class Factura_Compra : Cliente
     {
-        private string factura;
-        private string nombreEmpresa;
-        private string contacto;
-        private double TotalCompra;
+       
+        private string totalCompra;
+        private string numeroFactura;
 
 
-        public Factura_Compra() { }
-        public Factura_Compra(String factura, string nombreEmpresa, string contacto,double TotalCompra)
+        public Factura_Compra() : base() { }
+        public Factura_Compra(string numeroFactura, string nombreEmpresa, string contacto,string direccion,string telefono, string totalCompra) 
+            : base (nombreEmpresa,contacto,telefono,direccion)
         {
-            this.nombreEmpresa = nombreEmpresa;
-            this.contacto = contacto;
-            this.factura = factura;
-            this.TotalCompra = TotalCompra;
+           
+            this.totalCompra = totalCompra;
+            this.NumeroFactura = numeroFactura;
         }
-        public string Factura { get => factura; set => factura = value; }
-        public string NombreEmpresa { get => nombreEmpresa; set => nombreEmpresa = value; }
-        public string Contacto { get => contacto; set => contacto = value; }
-        public double TotalCompra1 { get => TotalCompra; set => TotalCompra = value; }
+        
+        public string TotalCompra { get => totalCompra; set => totalCompra = value; }
+        public string NumeroFactura { get => numeroFactura; set => numeroFactura = value; }
 
         public override string ToString()
         {
-            return string.Format("{0}\t{1}\t{2}\t{3}",Factura,NombreEmpresa,Contacto,TotalCompra);
+            return base.ToString()+ string.Format("{{0}\t{1:C2}",NumeroFactura,TotalCompra);
         }
+
     }
 }

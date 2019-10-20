@@ -5,20 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Aplicativo_Empresa"
         mc:Ignorable="d"
-        Title="Window9" Height="450" Width="800">
+        Title="Informe" Height="450" Width="800" Icon="SM.png" ResizeMode="NoResize">
     <Grid>
         <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="149*"/>
+                <ColumnDefinition Width="49*"/>
+            </Grid.ColumnDefinitions>
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF686868" Offset="0"/>
                     <GradientStop Color="#FF1F1B1B" Offset="1"/>
                 </LinearGradientBrush>
             </Grid.Background>
-            <Label Content="INFORME DE PRODUCTOS" HorizontalAlignment="Left" Margin="305,5,0,0" VerticalAlignment="Top" Width="323" FontFamily="Times New Roman" FontSize="25"/>
-            <Image Margin="10,10,721,349" Source="SM.png" Stretch="Fill"/>
-            <ListBox x:Name="listBox_client" HorizontalAlignment="Left" Height="274" Margin="33,92,0,0" VerticalAlignment="Top" Width="720" FontFamily="Arial"/>
-            <Label Content="Lista de Clientes" HorizontalAlignment="Left" Margin="85,43,0,0" VerticalAlignment="Top" Width="117" FontFamily="Times New Roman" FontSize="15"/>
-            <Button x:Name="button_atras" Content="Atras" HorizontalAlignment="Left" Margin="678,10,0,0" VerticalAlignment="Top" Width="75" Height="23" FontFamily="Times New Roman" FontSize="15" Click="Button_Click"/>
+            <Label Content="INFORME DE COMPRA" HorizontalAlignment="Left" Margin="249,12,0,0" VerticalAlignment="Top" Width="323" FontFamily="Times New Roman" FontSize="25"/>
+            <Image Margin="10,10,501,332" Source="SM.png" Stretch="Fill"/>
+            <Label Content="Lista de Clientes" HorizontalAlignment="Left" Margin="124,53,0,0" VerticalAlignment="Top" Width="120" FontFamily="Times New Roman" FontSize="15" Height="36"/>
+            <Button x:Name="button_atras" Content="Atrás" HorizontalAlignment="Left" Margin="82,0,0,386" Width="75" FontFamily="Times New Roman" FontSize="15" Click="Button_Click" Height="23" VerticalAlignment="Bottom" Grid.Column="1"/>
+            <DataGrid x:Name="datagrid_client" HorizontalAlignment="Left" Height="257" Margin="65,113,0,0" VerticalAlignment="Top" Width="667" RowHeight="30" ColumnWidth="100" Grid.ColumnSpan="2" />
         </Grid>
 
     </Grid>

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Aplicativo_Empresa"
         mc:Ignorable="d"
-        Title="Window2" Height="450" Width="800">
+        Title="Visitas" Height="450" Width="800" Icon="SM.png" ResizeMode="NoResize">
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -14,15 +14,15 @@
             </LinearGradientBrush>
         </Grid.Background>
         <Image Margin="26,49,489,94" Source="SM.png" Stretch="Fill"/>
-        <Label Content="MODULO DE VISITAS" HorizontalAlignment="Left" Margin="375,31,0,0" VerticalAlignment="Top" Height="40" Width="332" FontFamily="Imprint MT Shadow" FontSize="24" Foreground="White"/>
-        <Button x:Name="button_planillaSalida" Content="Generar planilla de Salida" HorizontalAlignment="Left" VerticalAlignment="Top" Width="300" Margin="375,114,0,0" Height="51" FontFamily="Times New Roman" FontSize="24" Click="Button_planillaSalida_Click"/>
-        <Button x:Name="button_planillaLLegada" Content="Generar planilla de Llegada" HorizontalAlignment="Left" Margin="375,194,0,0" VerticalAlignment="Top" Width="300" Height="49" FontFamily="Times New Roman" FontSize="24" Click="Button_planillaLLegada_Click"/>
-        <Button x:Name="button_InformeSalidas" Content="Generar Informe de Salida" HorizontalAlignment="Left" Margin="375,285,0,0" VerticalAlignment="Top" Width="300" Height="53" FontFamily="Times New Roman" FontSize="24" Click="Button_InformeSalidas_Click"/>
-        <Button x:Name="button_Back" Content="Atras" HorizontalAlignment="Left" Margin="26,16,0,0" VerticalAlignment="Top" Width="75" FontSize="15" FontFamily="Times New Roman" FontWeight="Bold" Click="Button_Back_Click"/>
+        <Label Content="VISITAS" HorizontalAlignment="Left" Margin="468,49,0,0" VerticalAlignment="Top" Height="42" Width="124" FontFamily="Times New Roman" FontSize="30" Foreground="White"/>
+        <Button x:Name="button_planillaSalida" Content="Planilla de Salida" HorizontalAlignment="Left" VerticalAlignment="Top" Width="300" Margin="375,114,0,0" Height="51" FontFamily="Times New Roman" FontSize="24" Click="Button_planillaSalida_Click"/>
+        <Button x:Name="button_planillaLLegada" Content="Planilla de Llegada" HorizontalAlignment="Left" Margin="375,194,0,0" VerticalAlignment="Top" Width="300" Height="49" FontFamily="Times New Roman" FontSize="24" Click="Button_planillaLLegada_Click"/>
+        <Button x:Name="button_InformeSalidas" Content="Informe de Salida" HorizontalAlignment="Left" Margin="375,285,0,0" VerticalAlignment="Top" Width="300" Height="53" FontFamily="Times New Roman" FontSize="24" Click="Button_InformeSalidas_Click"/>
+        <Button x:Name="button_Back" Content="Atrás" HorizontalAlignment="Left" Margin="26,16,0,0" VerticalAlignment="Top" Width="75" FontSize="15" FontFamily="Times New Roman" FontWeight="Bold" Click="Button_Back_Click"/>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        
+
     </Grid>
 </Window>

@@ -48,12 +48,6 @@ namespace Aplicativo_Empresa
             
         }
 
-        private void Button_back_Click(object sender, RoutedEventArgs e)
-        {
-            Window atras = new Window();
-            this.Hide();
-            atras.ShowDialog();
-            
-        }
+       
     }
 }

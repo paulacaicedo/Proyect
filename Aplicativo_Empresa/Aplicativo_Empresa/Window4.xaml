@@ -5,19 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Aplicativo_Empresa"
         mc:Ignorable="d"
-        Title="Window4" Height="450" Width="800">
+        Title="Servicio Técnico" Height="450" Width="800" ResizeMode="NoResize" Icon="SM.png">
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                <GradientStop Color="#FF090732" Offset="0"/>
-                <GradientStop Color="#FF261FC1" Offset="1"/>
+                <GradientStop Color="#FF15326E" Offset="0"/>
+                <GradientStop Color="#FF091227" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <Image Margin="23,32,442,53" Source="SM.png" Stretch="Fill"/>
-        <Label Content="MODULO DE SERVICIO TECNICO" HorizontalAlignment="Left" Margin="395,62,0,0" VerticalAlignment="Top" Height="46" Width="365" FontSize="20" FontFamily="Imprint MT Shadow" Foreground="White"/>
-        <Button x:Name="button_AntesServicio" Content="Generar Panilla Factura del Servicio" HorizontalAlignment="Left" VerticalAlignment="Top" Width="331" Margin="395,133,0,0" Height="54" FontFamily="Times New Roman" FontSize="20" Click="Button_AntesServicio_Click"/>
-        <Button x:Name="button_InformeServicio" Content="Generar Informe Servicio (Cliente)" HorizontalAlignment="Left" Margin="395,219,0,0" VerticalAlignment="Top" Width="331" Height="51" FontSize="20" FontFamily="Times New Roman" Click="Button_InformeServicio_Click"/>
-        <Button x:Name="button_back" Content="Atras" HorizontalAlignment="Left" Margin="23,17,0,0" VerticalAlignment="Top" Width="75" FontFamily="Times New Roman" FontSize="15" Click="Button_back_Click"/>
+        <Image Margin="23,32,465,42" Source="SM.png" Stretch="Fill"/>
+        <Label Content="SERVICIO TÉCNICO" HorizontalAlignment="Left" Margin="424,62,0,0" VerticalAlignment="Top" Height="44" Width="289" FontSize="30" FontFamily="Times New Roman" Foreground="White"/>
+        <Button x:Name="button_AntesServicio" Content="Factura del Servicio" HorizontalAlignment="Left" VerticalAlignment="Top" Width="331" Margin="395,133,0,0" Height="54" FontFamily="Times New Roman" FontSize="20" Click="Button_AntesServicio_Click"/>
+        <Button x:Name="button_InformeServicio" Content="Informe Servicio (Cliente)" HorizontalAlignment="Left" Margin="395,219,0,0" VerticalAlignment="Top" Width="331" Height="51" FontSize="20" FontFamily="Times New Roman" Click="Button_InformeServicio_Click"/>
+        <Button x:Name="button_back" Content="Atrás" HorizontalAlignment="Left" Margin="23,17,0,0" VerticalAlignment="Top" Width="75" FontFamily="Times New Roman" FontSize="15" Click="Button_back_Click"/>
 
     </Grid>
 </Window>

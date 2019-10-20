@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Aplicativo_Empresa"
         mc:Ignorable="d"
-        Title="Window6" Height="450" Width="800">
+        Title="Planilla Llegada" Height="450" Width="800" ResizeMode="NoResize" Icon="SM.png">
     <Grid>
         <Grid>
             <Grid.Background>
@@ -32,10 +32,10 @@
             <TextBox x:Name="textbox_finalreport" HorizontalAlignment="Left" Height="141" Margin="27,254,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="333" FontFamily="Arial"/>
             <Label Content="Acuerdos y Compromisos Finales" HorizontalAlignment="Left" Margin="384,203,0,0" VerticalAlignment="Top" Width="225" FontFamily="Times New Roman" FontSize="15"/>
             <TextBox x:Name="textbox_finalecompromise" HorizontalAlignment="Left" Height="140" Margin="384,230,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="370" FontFamily="Arial"/>
-            <Button x:Name="button_atras" Content="Atras" HorizontalAlignment="Left" Margin="678,10,0,0" VerticalAlignment="Top" Width="75" Height="23" FontFamily="Times New Roman" FontSize="15" Click="Button_Click"/>
+            <Button x:Name="button_atras" Content="Atrás" HorizontalAlignment="Left" Margin="678,10,0,0" VerticalAlignment="Top" Width="75" Height="23" FontFamily="Times New Roman" FontSize="15" Click="Button_Click"/>
             <Label x:Name="label_date" Content="" HorizontalAlignment="Left" Margin="208,70,0,0" VerticalAlignment="Top" Width="84" FontFamily="Times New Roman" FontSize="15" Background="#FFF0EAEA"/>
             <Label x:Name="label_time" Content="" HorizontalAlignment="Left" Margin="343,70,0,0" VerticalAlignment="Top" Width="101" FontFamily="Times New Roman" FontSize="15" Background="#FFF5EEEE"/>
-            <Button x:Name="button_guardar" Content="Guardar" HorizontalAlignment="Left" Margin="471,382,0,0" VerticalAlignment="Top" Width="109" Height="27" FontFamily="Times New Roman" FontSize="20" Click="Button_guardar_Click"/>
+            <Button x:Name="button_guardar" Content="Guardar" HorizontalAlignment="Left" Margin="471,382,0,10" Width="109" FontFamily="Times New Roman" FontSize="20" Click="Button_guardar_Click"/>
             <Button x:Name="button_cancel" Content="Cancelar" HorizontalAlignment="Left" Margin="619,382,0,0" VerticalAlignment="Top" Width="104" Height="27" FontFamily="Times New Roman" FontSize="20" Click="Button_cancel_Click"/>
 
         </Grid>

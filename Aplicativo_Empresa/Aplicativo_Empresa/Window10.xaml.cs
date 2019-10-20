@@ -13,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Newtonsoft.Json;
 
 namespace Aplicativo_Empresa
 {
@@ -25,13 +26,16 @@ namespace Aplicativo_Empresa
         static double cantidad = 0;
         static double costo = 0;
         static string total;
-        static DateTime date;
-        static DateTime hour;
+        static string date;
+        static string hour;
         public Window10()
         {
             InitializeComponent();
             label_date.Content = DateTime.Now.ToString("dd/MM/yyyy");
+            hour = DateTime.Now.ToShortTimeString();
+            textbox_timeservice.Text.Contains(Convert.ToString(hour));
         }
+        static private List<Factura_Servicios> fa_servicios = new List<Factura_Servicios>();
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -40,6 +44,8 @@ namespace Aplicativo_Empresa
             atras.ShowDialog();
             
         }
+
+
 
         private void Button_guardar_Click(object sender, RoutedEventArgs e)
         {
@@ -127,6 +133,7 @@ namespace Aplicativo_Empresa
                 MessageBox.Show("Digite un valor de unitario válido");
                 return;
             }
+
             bool isquantity = double.TryParse(textbox_quantity.Text, out cantidad);
             if (!isquantity)
             {
@@ -142,19 +149,9 @@ namespace Aplicativo_Empresa
 
             //Validacion de fecha y hora
 
-            bool time = DateTime.TryParse(textbox_dateservice.Text, out date);
-            if (time)
-            {
-                MessageBox.Show("Valor de Fecha no Valido");
-                return;
-            }
-
-            bool reloj = DateTime.TryParse(textbox_timeservice.Text, out hour);
-            if (reloj)
-            {
-                MessageBox.Show("Valor de hora no valido");
-                return;
-            }
+            date = textbox_dateservice.Text;
+            hour = DateTime.Now.ToShortTimeString();
+            textbox_timeservice.Text.Contains(Convert.ToString(hour));
 
             Regex r = new Regex("^[a-zA-Z\\s]*$");
 
@@ -188,50 +185,22 @@ namespace Aplicativo_Empresa
                 return;
             }
 
-            if (!r.IsMatch(textbox_descrip.Text))
-            {
-                MessageBox.Show("El nombre del vendedor sólo debe tener caracteres alfabéticos ");
-                textbox_descrip.Focus();
-                return;
-            }
-
-            if (!r.IsMatch(textbox_descripcost.Text))
-            {
-                MessageBox.Show("El nombre del vendedor sólo debe tener caracteres alfabéticos ");
-                textbox_descripcost.Focus();
-                return;
-            }
-
-            if (!r.IsMatch(textbox_materials.Text))
-            {
-                MessageBox.Show("El nombre del vendedor sólo debe tener caracteres alfabéticos ");
-                textbox_materials.Focus();
-                return;
-            }
-
 
             //Operaciones
 
             costo += precio;
             total = Convert.ToString(costo);
-            textbox_totalprice.Text.Contains(total);
+            label_final.Content = total;
 
             //Instanciar objeto
-            Factura_Servicios newFacSer = new Factura_Servicios(textbox_factura.Text, textbox_client.Text, textbox_asistent.Text,textbox_product.Text, costo);
+            Factura_Servicios newFacSer = new Factura_Servicios(date,textbox_client.Text,textbox_asistent.Text, textbox_phone.Text,textbox_adress.Text,textbox_product.Text,costo);
             MessageBox.Show(newFacSer.ToString());
+            fa_servicios.Add(newFacSer);
 
             //guardar el registro
 
-            try
-            {
-                StreamWriter sw = new StreamWriter(AppDomain.CurrentDomain.BaseDirectory + "\\Factura_Servicios.txt", append: true);
-                sw.WriteLine(newFacSer.ToString());
-                sw.Close();
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Hubo un error con el archivo y no se pudo registrar");
-            }
+            string registroJSON = JsonConvert.SerializeObject(fa_servicios);
+            File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + "\\Servicios.json", registroJSON);
         }
 
         

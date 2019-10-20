@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.IO;
+using Newtonsoft.Json;
+using System.Data;
 
 namespace Aplicativo_Empresa
 {
@@ -20,12 +22,33 @@ namespace Aplicativo_Empresa
     /// </summary>
     public partial class Window9 : Window
     {
-        private List<Factura_Compra> fa_compra;
+        private List<Factura_Compra> LoadCollectionData()
+        {
+            List<Factura_Compra> fa_compra = new List<Factura_Compra>();
+            string archivo = @"Compra.json";
+            using (StreamReader r = new StreamReader(archivo))
+            {
+                var ArchivoJSON = r.ReadToEnd();
+                MessageBox.Show("Así llega del archivo Json: \n" + ArchivoJSON.ToString());
+                fa_compra = JsonConvert.DeserializeObject<List<Factura_Compra>>(ArchivoJSON);
+
+
+            }
+            return fa_compra;
+        }
+        
         public Window9()
         {
             InitializeComponent();
-            Llenar();
+            LlenarData();   
+        }
+
+        private void LlenarData()
+        {
+
+            datagrid_client.ItemsSource = LoadCollectionData();
             
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -36,25 +59,7 @@ namespace Aplicativo_Empresa
             
         }
 
-        private void Llenar()
-        {
-            string line;
 
-            StreamReader sr = new StreamReader(AppDomain.CurrentDomain.BaseDirectory + "\\Factura_Compra.txt", Encoding.UTF8);
-            fa_compra = new List<Factura_Compra>();
 
-            while ((line = sr.ReadLine()) != null)
-            {
-                string[] datos = line.Split(';');
-                MessageBox.Show(line);
-                listBox_client.Items.Add(line);
-            }
-            sr.Close();
-
-        }
-
-        
-
-        
     }
 }

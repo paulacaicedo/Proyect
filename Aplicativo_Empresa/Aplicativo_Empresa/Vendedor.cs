@@ -2,33 +2,25 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Aplicativo_Empresa
 {
-    public class Vendedor
+    class Vendedor
     {
-        public int nombre
+        private string name;
+        private string password;
+
+
+        public Vendedor() { }
+        public Vendedor(string name,string password)
         {
-            get => default;
-            set
-            {
-            }
+            this.Name = name;
+            this.Password = password;
         }
 
-        public int id
-        {
-            get => default;
-            set
-            {
-            }
-        }
+        public string Name { get => name; set => name = value; }
+        public string Password { get => password; set => password = value; }
 
-        public int numeroIdentificacion
-        {
-            get => default;
-            set
-            {
-            }
-        }
     }
 }

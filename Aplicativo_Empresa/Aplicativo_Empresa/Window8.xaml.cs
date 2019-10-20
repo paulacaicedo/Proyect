@@ -12,6 +12,7 @@ using System.Text.RegularExpressions;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Newtonsoft.Json;
 
 namespace Aplicativo_Empresa
 {
@@ -32,6 +33,8 @@ namespace Aplicativo_Empresa
             label_iva.Content = "19%";
 
         }
+
+        static private List<Factura_Compra> fa_compra = new List<Factura_Compra>();
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -166,18 +169,10 @@ namespace Aplicativo_Empresa
             }
 
             //Validacion de ComboBox
-            bool item = Convert.ToBoolean(combobox_linea);
-            if (item == false)
+            if (combobox_linea == null)
             {
-                MessageBox.Show("Linea esta vacio");
+                MessageBox.Show("Linea se escuentra vacio");
             }
-
-            bool item1 = Convert.ToBoolean(comboBox_state);
-            if (item1 == false)
-            {
-                MessageBox.Show("Estado de Compra esta vacio");
-            }
-
 
             labeltext_total.Visibility = Visibility.Visible;
             labeltext_beforeIva.Visibility = Visibility.Visible;
@@ -190,56 +185,44 @@ namespace Aplicativo_Empresa
             precioTotal = (precio * 19) / 100;
             precioFinal = Convert.ToString(precioTotal);
             labeltext_total.Content = precioFinal;
+            
 
             //Instanciar Objeto
-            Factura_Compra newFac = new Factura_Compra(textbox_factura.Text, textbox_client.Text, textbox_asistent.Text,precioTotal);
+            Factura_Compra newFac = new Factura_Compra(textbox_factura.Text,textbox_client.Text,textbox_asistent.Text,textbox_adress.Text,textbox_phone.Text,precioFinal);
             MessageBox.Show(newFac.ToString());
+            fa_compra.Add(newFac);
 
 
             //guardar el registro
-            try
-            {
-                StreamWriter sw = new StreamWriter(AppDomain.CurrentDomain.BaseDirectory + "\\Factura_Compra.txt", append: true);
-                sw.WriteLine(newFac.ToString());
-                sw.Close();
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Hubo un error con el archivo y no se pudo registrar");
-            }
+            string registroJSON = JsonConvert.SerializeObject(fa_compra);
+            File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + "\\Compra.json", registroJSON);
 
         }
 
         private void Button_cancel_Click(object sender, RoutedEventArgs e)
         {
-            MessageBoxResult result = MessageBox.Show("Realmente desea salir?", "Alerta", MessageBoxButton.OKCancel);
+            MessageBoxResult result = MessageBox.Show("Realmente desea eliminar factura?", "Alerta", MessageBoxButton.OKCancel);
             if (result == MessageBoxResult.OK)
             {
-                Window2 cerrar = new Window2();
-                this.Hide();
-                cerrar.ShowDialog();
-                
+                textbox_seller.Clear();
+                textbox_client.Clear();
+                textbox_asistent.Clear();
+                textbox_adress.Clear();
+                textbox_phone.Clear();
+                textbox_mark.Clear();
+                textbox_product.Clear();
+                textbox_descrip.Clear();
+                textbox_quantity.Clear();
+                textbox_unitvalue.Clear();
+                textbox_factura.Clear();
+
             }
             else
             {
                 this.Close();
             }
         }
-
-        private void Button_newFac_Click(object sender, RoutedEventArgs e)
-        {
-            textbox_seller.Clear();
-            textbox_client.Clear();
-            textbox_asistent.Clear();
-            textbox_adress.Clear();
-            textbox_phone.Clear();
-            textbox_mark.Clear();
-            textbox_product.Clear();
-            textbox_descrip.Clear();
-            textbox_quantity.Clear();
-            textbox_unitvalue.Clear();
-            
-
-        }
+         
+        
     }
 }

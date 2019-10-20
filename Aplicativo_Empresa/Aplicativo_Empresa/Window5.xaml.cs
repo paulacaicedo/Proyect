@@ -13,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Newtonsoft.Json;
 
 namespace Aplicativo_Empresa
 {
@@ -21,14 +22,21 @@ namespace Aplicativo_Empresa
     /// </summary>
     public partial class Window5 : Window
     {
-        
+        static private List<ReporteVisitas> reporteSalida = new List<ReporteVisitas>();
+        static string date;
+        static string hour;
         public Window5()
         {
             InitializeComponent();
             label_date.Content = DateTime.Now.ToString("dd/MM/yyyy");
             label_time.Content = DateTime.Now.ToShortTimeString();
-        }
 
+            date = DateTime.Now.ToString("dd/MM/yyyy");
+            hour = DateTime.Now.ToShortTimeString();
+        }
+            
+
+        
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Window2 atras = new Window2();
@@ -102,67 +110,48 @@ namespace Aplicativo_Empresa
                 return;
             }
 
-            if (!r.IsMatch(textbox_place.Text))
-            {
-                MessageBox.Show("La marca sólo debe tener caracteres alfabéticos ");
-                textbox_place.Focus();
-                return;
-            }
             if (!r.IsMatch(textbox_topic.Text))
             {
-                MessageBox.Show("La marca sólo debe tener caracteres alfabéticos ");
+                MessageBox.Show("El tema sólo debe tener caracteres alfabéticos ");
                 textbox_topic.Focus();
                 return;
             }
-            if (!r.IsMatch(textbox_report.Text))
-            {
-                MessageBox.Show("La marca sólo debe tener caracteres alfabéticos ");
-                textbox_report.Focus();
-                return;
-            }
-            if (!r.IsMatch(textbox_compromise.Text))
-            {
-                MessageBox.Show("La marca sólo debe tener caracteres alfabéticos ");
-                textbox_compromise.Focus();
-                return;
-            }
+
 
             //crear objeto y asignarle los valores
-            Cliente newClient = new Cliente(textbox_client.Text, textbox_asistent.Text, textbox_topic.Text);
-            MessageBox.Show(newClient.ToString());
+            ReporteVisitas newVisit = new ReporteVisitas(date,hour,textbox_client.Text.ToString(),textbox_asistent.Text.ToString(),textbox_topic.Text.ToString(),textbox_place.Text.ToString());
+            MessageBox.Show(newVisit.ToString());
+            reporteSalida.Add(newVisit);
 
             //guardar el registro
-            
-            try
-            {
-                StreamWriter sw = new StreamWriter(AppDomain.CurrentDomain.BaseDirectory + "\\ReporteVisitasSalida.txt", append: true);
-                sw.WriteLine(newClient.ToString());
-                sw.Close();
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Hubo un error con el archivo y no se pudo registrar");
-            }
-            
+
+            string registroJSON = JsonConvert.SerializeObject(reporteSalida);
+            File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + "\\ReporteSalida.json", registroJSON);
+
         }
 
 
 
         private void Button_cancel_Click(object sender, RoutedEventArgs e)
         {
-            MessageBoxResult result= MessageBox.Show("Realmente desea salir?", "Alerta", MessageBoxButton.OKCancel);
+            MessageBoxResult result= MessageBox.Show("¿Realmente desea eliminar la planilla?", "Alerta", MessageBoxButton.OKCancel);
             if (result == MessageBoxResult.OK)
             {
-                Window2 cerrar = new Window2();
-                this.Hide();
-                cerrar.ShowDialog();
-                
+                textbox_asistent.Clear();
+                textbox_client.Clear();
+                textbox_seller.Clear();
+                textbox_compromise.Clear();
+                textbox_place.Clear();
+                textbox_report.Clear();
+                textbox_topic.Clear();
+
             }
             else 
             {
                 this.Close();
             }
-            
+
+          
             
         }
     }

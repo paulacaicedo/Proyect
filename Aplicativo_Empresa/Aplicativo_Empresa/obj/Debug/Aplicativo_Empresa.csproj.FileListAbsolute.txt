@@ -35,3 +35,6 @@ D:\Mis documentos\ProgramacionI\Proyect\Aplicativo_Empresa\Aplicativo_Empresa\ob
 D:\Mis documentos\ProgramacionI\Proyect\Aplicativo_Empresa\Aplicativo_Empresa\obj\Debug\Window12.g.cs
 D:\Mis documentos\ProgramacionI\Proyect\Aplicativo_Empresa\Aplicativo_Empresa\obj\Debug\Window10.baml
 D:\Mis documentos\ProgramacionI\Proyect\Aplicativo_Empresa\Aplicativo_Empresa\obj\Debug\Window12.baml
+D:\Mis documentos\ProgramacionI\Proyect\Aplicativo_Empresa\Aplicativo_Empresa\bin\Debug\Newtonsoft.Json.dll
+D:\Mis documentos\ProgramacionI\Proyect\Aplicativo_Empresa\Aplicativo_Empresa\bin\Debug\Newtonsoft.Json.xml
+D:\Mis documentos\ProgramacionI\Proyect\Aplicativo_Empresa\Aplicativo_Empresa\obj\Debug\Aplicativo_Empresa.csproj.CopyComplete
