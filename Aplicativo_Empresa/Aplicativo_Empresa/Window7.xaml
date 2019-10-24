@@ -14,7 +14,7 @@
             </LinearGradientBrush>
         </Grid.Background>
         <Label Content="INFORME DE SALIDA" HorizontalAlignment="Left" Margin="267,40,0,0" VerticalAlignment="Top" Width="274" FontFamily="Times New Roman" FontSize="25"/>
-        <Image Margin="0,0,723,351" Source="SM.png" Stretch="Fill"/>
+        <Image Margin="0,0,714,333" Source="SM.png" Stretch="Fill"/>
         <Button x:Name="button_atras" Content="Atrás" HorizontalAlignment="Left" Margin="678,10,0,0" VerticalAlignment="Top" Width="75" Height="23" FontFamily="Times New Roman" FontSize="15" Click="Button_Click"/>
         <DataGrid x:Name="datagrid_report" HorizontalAlignment="Left" Height="277" Margin="37,93,0,0" VerticalAlignment="Top" Width="716"/>
     </Grid>

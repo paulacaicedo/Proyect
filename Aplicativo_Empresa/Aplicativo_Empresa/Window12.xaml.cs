@@ -26,7 +26,7 @@ namespace Aplicativo_Empresa
         public Window12()
         {
             InitializeComponent();
-            Llenar();
+            
         }
 
         private List<Factura_Servicios> LoadCollectionData()

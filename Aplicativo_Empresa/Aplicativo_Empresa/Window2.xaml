@@ -18,7 +18,7 @@
         <Button x:Name="button_planillaSalida" Content="Planilla de Salida" HorizontalAlignment="Left" VerticalAlignment="Top" Width="300" Margin="375,114,0,0" Height="51" FontFamily="Times New Roman" FontSize="24" Click="Button_planillaSalida_Click"/>
         <Button x:Name="button_planillaLLegada" Content="Planilla de Llegada" HorizontalAlignment="Left" Margin="375,194,0,0" VerticalAlignment="Top" Width="300" Height="49" FontFamily="Times New Roman" FontSize="24" Click="Button_planillaLLegada_Click"/>
         <Button x:Name="button_InformeSalidas" Content="Informe de Salida" HorizontalAlignment="Left" Margin="375,285,0,0" VerticalAlignment="Top" Width="300" Height="53" FontFamily="Times New Roman" FontSize="24" Click="Button_InformeSalidas_Click"/>
-        <Button x:Name="button_Back" Content="Atrás" HorizontalAlignment="Left" Margin="26,16,0,0" VerticalAlignment="Top" Width="75" FontSize="15" FontFamily="Times New Roman" FontWeight="Bold" Click="Button_Back_Click"/>
+        <Button x:Name="button_Back" Content="Atrás" HorizontalAlignment="Left" Margin="26,16,0,0" VerticalAlignment="Top" Width="75" FontSize="15" FontFamily="Times New Roman" Click="Button_Back_Click"/>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>

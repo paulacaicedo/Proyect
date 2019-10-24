@@ -50,11 +50,7 @@ namespace Aplicativo_Empresa
         private void Button_guardar_Click(object sender, RoutedEventArgs e)
         {
             //Validacion Campos Vacios
-            if (textbox_seller.Text.Trim().Length == 0)
-            {
-                MessageBox.Show("El nombre del vendedor no debe estar vacio ");
-                return;
-            }
+    
             if (textbox_client.Text.Trim().Length == 0)
             {
                 MessageBox.Show("El cliente no debe estar vacio ");
@@ -77,7 +73,7 @@ namespace Aplicativo_Empresa
             }
             if (textbox_timeservice.Text.Trim().Length == 0)
             {
-                MessageBox.Show("La marca no debe estar vacio ");
+                MessageBox.Show("La hora no debe estar vacio ");
                 return;
             }
             if (textbox_product.Text.Trim().Length == 0)
@@ -171,13 +167,6 @@ namespace Aplicativo_Empresa
                 return;
             }
 
-            if (!r.IsMatch(textbox_seller.Text))
-            {
-                MessageBox.Show("El nombre del vendedor sólo debe tener caracteres alfabéticos ");
-                textbox_seller.Focus();
-                return;
-            }
-
             if (!r.IsMatch(textbox_product.Text))
             {
                 MessageBox.Show("El nombre del vendedor sólo debe tener caracteres alfabéticos ");
@@ -209,13 +198,25 @@ namespace Aplicativo_Empresa
 
         private void Button_cancel_Click(object sender, RoutedEventArgs e)
         {
-            MessageBoxResult result = MessageBox.Show("Realmente desea salir?", "Alerta", MessageBoxButton.OKCancel);
+            MessageBoxResult result = MessageBox.Show("Realmente desea eliminar la plantilla?", "Alerta", MessageBoxButton.OKCancel);
             if (result == MessageBoxResult.OK)
             {
-                Window2 cerrar = new Window2();
-                this.Hide();
-                cerrar.ShowDialog();
-                this.Show();
+
+                textbox_client.Clear();
+                textbox_asistent.Clear();
+                textbox_adress.Clear();
+                textbox_phone.Clear();
+                textbox_product.Clear();
+                textbox_descrip.Clear();
+                textbox_quantity.Clear();
+                textbox_factura.Clear();
+                textbox_materials.Clear();
+                textbox_cost.Clear();
+                textbox_descripcost.Clear();
+                textbox_dateservice.Clear();
+                textbox_timeservice.Clear();
+                textbox_duration.Clear();
+                textbox_totalprice.Clear();
             }
             else
             {

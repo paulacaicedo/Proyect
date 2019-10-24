@@ -14,13 +14,12 @@
             </LinearGradientBrush>
         </Grid.Background>
         <Image Margin="10,10,641,250" Source="SM.png" Stretch="Fill"/>
-        <Label Content="REPORTE DE VISITAS PLANILLA DE SALIDA" HorizontalAlignment="Left" Margin="208,30,0,0" VerticalAlignment="Top" Height="35" Width="444" FontSize="21" FontFamily="Times New Roman"/>
+        <Label Content="REPORTE DE VISITAS PLANILLA DE SALIDA" HorizontalAlignment="Left" Margin="208,29,0,0" VerticalAlignment="Top" Height="35" Width="444" FontSize="21" FontFamily="Times New Roman"/>
         <Label Content="Fecha" HorizontalAlignment="Left" Margin="156,70,0,0" VerticalAlignment="Top" Width="53" Height="26" FontSize="15" FontFamily="Times New Roman"/>
         <Label Content="Cliente" HorizontalAlignment="Left" Margin="156,117,0,0" VerticalAlignment="Top" Width="53" FontFamily="Times New Roman" FontSize="15" Height="35"/>
         <TextBox x:Name="textbox_client" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="438" Margin="214,121,0,0" FontFamily="Arial"/>
         <Label Content="Vendedor" HorizontalAlignment="Left" Margin="471,75,0,0" VerticalAlignment="Top" Width="72" FontFamily="Times New Roman" FontSize="15"/>
-        <TextBox x:Name="textbox_seller" HorizontalAlignment="Left" Height="23" Margin="548,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="205" FontFamily="Arial"/>
-        <Label Content="Asistente Cliente" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="6.202,7.348" Margin="156,157,0,0" Width="121" FontFamily="Times New Roman" FontSize="15" Height="30"/>
+        <Label Content="Contacto Cliente" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="6.202,7.348" Margin="156,157,0,0" Width="121" FontFamily="Times New Roman" FontSize="15" Height="30"/>
         <TextBox x:Name="textbox_asistent" HorizontalAlignment="Left" Height="23" Margin="282,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="261" FontFamily="Arial"/>
         <Label Content="Hora" HorizontalAlignment="Left" Margin="297,69,0,0" VerticalAlignment="Top" Width="63" RenderTransformOrigin="0.524,0.24" FontFamily="Times New Roman" FontSize="15"/>
         <Label Content="Lugar" HorizontalAlignment="Left" Margin="548,160,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="15" RenderTransformOrigin="0.28,0.577"/>
@@ -31,11 +30,17 @@
         <TextBox x:Name="textbox_report" HorizontalAlignment="Left" Height="141" Margin="27,254,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="333" FontFamily="Arial"/>
         <Label Content="Acuerdos y Compromisos" HorizontalAlignment="Left" Margin="398,195,0,0" VerticalAlignment="Top" Width="172" FontFamily="Times New Roman" FontSize="15"/>
         <TextBox x:Name="textbox_compromise" HorizontalAlignment="Left" Height="140" Margin="383,227,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="370" FontFamily="Arial"/>
-        <Button x:Name="button_atras" Content="Atras" HorizontalAlignment="Left" Margin="678,10,0,0" VerticalAlignment="Top" Width="75" Height="23" FontFamily="Times New Roman" FontSize="15" Click="Button_Click"/>
-        <Button x:Name="button_guardar" Content="Guardar" HorizontalAlignment="Left" Margin="471,382,0,10" Width="109" FontFamily="Times New Roman" FontSize="20" Click="Button_guardar_Click"/>
-        <Button x:Name="button_cancel" Content="Cancelar" HorizontalAlignment="Left" Margin="619,382,0,0" VerticalAlignment="Top" Width="104" Height="27" FontFamily="Times New Roman" FontSize="20" Click="Button_cancel_Click"/>
+        <Button x:Name="button_atras" Content="Atrás" HorizontalAlignment="Left" Margin="678,10,0,0" VerticalAlignment="Top" Width="75" Height="23" FontFamily="Times New Roman" FontSize="15" Click="Button_Click"/>
+        <Button x:Name="button_guardar" Content="Guardar" HorizontalAlignment="Left" Margin="461,374,0,18" Width="109" FontFamily="Times New Roman" FontSize="20" Click="Button_guardar_Click"/>
+        <Button x:Name="button_cancel" Content="Cancelar" HorizontalAlignment="Left" Margin="599,374,0,0" VerticalAlignment="Top" Width="109" Height="29" FontFamily="Times New Roman" FontSize="20" Click="Button_cancel_Click"/>
         <Label x:Name="label_date" Content="" HorizontalAlignment="Left" Margin="208,70,0,0" VerticalAlignment="Top" Width="84" FontFamily="Times New Roman" FontSize="15" Background="#FFF0EAEA"/>
         <Label x:Name="label_time" Content="" HorizontalAlignment="Left" Margin="343,70,0,0" VerticalAlignment="Top" Width="101" FontFamily="Times New Roman" FontSize="15" Background="#FFF5EEEE"/>
+        <ComboBox x:Name="comboBox_seller" HorizontalAlignment="Left" Margin="548,75,0,0" VerticalAlignment="Top" Width="205" Height="27">
+            <ComboBoxItem Content="Yolima Serrano" FontSize="15" FontFamily="Times New Roman"/>
+            <ComboBoxItem Content="Sergio Monsalve" FontSize="15" FontFamily="Times New Roman"/>
+            <ComboBoxItem Content="Erika" FontSize="15" FontFamily="Times New Roman"/>
+            <ComboBoxItem Content="Viviana" FontSize="15" FontFamily="Times New Roman"/>
+        </ComboBox>
 
     </Grid>
 </Window>

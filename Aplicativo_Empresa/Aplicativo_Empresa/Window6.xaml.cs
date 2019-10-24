@@ -48,11 +48,6 @@ namespace Aplicativo_Empresa
         private void Button_guardar_Click(object sender, RoutedEventArgs e)
         {
 
-            if (textbox_seller.Text.Trim().Length == 0)
-            {
-                MessageBox.Show("El nombre del vendedor no debe estar vacio ");
-                return;
-            }
             if (textbox_client.Text.Trim().Length == 0)
             {
                 MessageBox.Show("El cliente no debe estar vacio ");
@@ -101,12 +96,6 @@ namespace Aplicativo_Empresa
                 return;
             }
 
-            if (!r.IsMatch(textbox_seller.Text))
-            {
-                MessageBox.Show("El nombre del vendedor sólo debe tener caracteres alfabéticos ");
-                textbox_seller.Focus();
-                return;
-            }
             if (!r.IsMatch(textbox_topic.Text))
             {
                 MessageBox.Show("El tema sólo debe tener caracteres alfabéticos ");
@@ -132,7 +121,6 @@ namespace Aplicativo_Empresa
             {
                 textbox_asistent.Clear();
                 textbox_client.Clear();
-                textbox_seller.Clear();
                 textbox_finalecompromise.Clear();
                 textbox_place.Clear();
                 textbox_finalreport.Clear();

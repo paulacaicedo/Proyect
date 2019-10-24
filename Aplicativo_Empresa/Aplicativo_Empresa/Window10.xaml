@@ -24,8 +24,7 @@
             <Label Content="Cliente" HorizontalAlignment="Left" Margin="143,72,0,0" VerticalAlignment="Top" Width="53" FontFamily="Times New Roman" FontSize="15" Height="35"/>
             <TextBox x:Name="textbox_client" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="342" Margin="201,76,0,0" FontFamily="Arial"/>
             <Label Content="Vendedor" HorizontalAlignment="Left" Margin="452,44,0,0" VerticalAlignment="Top" Width="72" FontFamily="Times New Roman" FontSize="15"/>
-            <TextBox x:Name="textbox_seller" HorizontalAlignment="Left" Height="23" Margin="543,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="205" FontFamily="Arial"/>
-            <Label Content="Asistente Cliente" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="6.202,7.348" Margin="134,107,0,0" Width="121" FontFamily="Times New Roman" FontSize="15" Height="30"/>
+            <Label Content="Contacto Cliente" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="6.202,7.348" Margin="134,107,0,0" Width="121" FontFamily="Times New Roman" FontSize="15" Height="30"/>
             <TextBox x:Name="textbox_asistent" HorizontalAlignment="Left" Height="23" Margin="260,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="261" FontFamily="Arial"/>
             <Label Content="N°Factura" HorizontalAlignment="Left" Margin="283,44,0,0" VerticalAlignment="Top" Width="77" RenderTransformOrigin="0.524,0.24" FontFamily="Times New Roman" FontSize="15"/>
             <TextBox x:Name="textbox_factura" HorizontalAlignment="Left" Height="23" Margin="360,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="87"/>
@@ -59,6 +58,13 @@
             <Label x:Name="label_date" Content="" HorizontalAlignment="Left" Margin="193,40,0,0" VerticalAlignment="Top" Width="84" FontFamily="Times New Roman" FontSize="15" Background="#FFF0EAEA"/>
             <Label Content="Precio Final" HorizontalAlignment="Left" Margin="581,234,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.136,0.548" FontFamily="Times New Roman" FontSize="15"/>
             <Label x:Name="label_final" HorizontalAlignment="Left" Height="27" Margin="669,234,0,0" VerticalAlignment="Top" Width="113" FontFamily="Arial" Background="#FFF0ECEC" Grid.ColumnSpan="2"/>
+            <ComboBox x:Name="comboBox_seller" HorizontalAlignment="Left" Margin="529,45,0,0" VerticalAlignment="Top" Width="224" FontFamily="Times New Roman" FontSize="15">
+                
+                <ComboBoxItem Content="Yolima Serrano" FontSize="15" FontFamily="Times New Roman"/>
+                <ComboBoxItem Content="Sergio Monsalve" FontSize="15" FontFamily="Times New Roman"/>
+                <ComboBoxItem Content="Erika" FontSize="15" FontFamily="Times New Roman"/>
+                <ComboBoxItem Content="Viviana" FontSize="15" FontFamily="Times New Roman"/>
+            </ComboBox>
 
         </Grid>
 
