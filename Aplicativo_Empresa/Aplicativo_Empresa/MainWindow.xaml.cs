@@ -58,11 +58,9 @@ namespace Aplicativo_Empresa
                
                 if (textbox_username.Text.Equals(ven.Name) && password.Password.Equals(ven.Password))
                 {
-                    MessageBox.Show("Inicio Sesion");
                     Window1 Window = new Window1();
                     this.Hide();
                     Window.ShowDialog();
-
                 }
                 else
                 {

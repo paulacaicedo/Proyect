@@ -21,7 +21,7 @@
         </Grid.Background>
         <Image Margin="57,63,516,109" Source="SM.png" Stretch="Fill"/>
         <Button x:Name="button_visitas" Content="VISITAS" HorizontalAlignment="Left" Margin="317,95,0,0" VerticalAlignment="Top" Width="436" Height="65" FontFamily="Times New Roman" FontSize="25" Background="#FF356D9B" Click="Button_visitas_Click"/>
-        <Button x:Name="button_compra" Content="COMPRA Y VENTA" HorizontalAlignment="Left" Margin="317,188,0,0" VerticalAlignment="Top" Width="436" Height="61" FontFamily="Times New Roman" FontSize="25" Click="Button_Click" Background="#FF356D9B"/>
+        <Button x:Name="button_compra" Content="COMPRA" HorizontalAlignment="Left" Margin="317,188,0,0" VerticalAlignment="Top" Width="436" Height="61" FontFamily="Times New Roman" FontSize="25" Click="Button_Click" Background="#FF356D9B"/>
         <Button x:Name="button_servicios" Content="SERVICIOS" HorizontalAlignment="Left" Margin="317,277,0,0" VerticalAlignment="Top" Width="436" Height="57" Click="Button_Click_1" FontFamily="Times New Roman" FontSize="25" Background="#FF356D9B"/>
 
     </Grid>

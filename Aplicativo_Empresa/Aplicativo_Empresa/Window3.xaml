@@ -20,7 +20,7 @@
         <Image Margin="39,66,468.474,50" Source="SM.png" Stretch="Fill"/>
         <Label Content="COMPRA " HorizontalAlignment="Left" Height="49" Margin="479,52,0,0" VerticalAlignment="Top" Width="145" FontSize="30" FontFamily="Times New Roman" Foreground="White"/>
         <Button x:Name="button_GenerarFactura" Content="Factura de Compra" HorizontalAlignment="Left" Margin="391,135,0,0" VerticalAlignment="Top" Width="321" Height="57" FontSize="24" FontFamily="Times New Roman" Click="Button_GenerarFactura_Click"/>
-        <Button x:Name="button_InformeProductos" Content="Informe de Productos" HorizontalAlignment="Left" Height="60" Margin="391,246,0,0" VerticalAlignment="Top" Width="321" FontFamily="Times New Roman" FontSize="25" Click="Button_InformeProductos_Click"/>
+        <Button x:Name="button_InformeProductos" Content="Informe de Facturas" HorizontalAlignment="Left" Height="60" Margin="391,246,0,0" VerticalAlignment="Top" Width="321" FontFamily="Times New Roman" FontSize="25" Click="Button_InformeProductos_Click"/>
         <Button x:Name="button_back" Content="Atrás" HorizontalAlignment="Left" Margin="39,21,0,0" VerticalAlignment="Top" Width="75" FontSize="15" FontFamily="Times New Roman" Click="Button_back_Click"/>
 
     </Grid>

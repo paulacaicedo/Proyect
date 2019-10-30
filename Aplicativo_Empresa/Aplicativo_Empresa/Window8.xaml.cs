@@ -102,10 +102,23 @@ namespace Aplicativo_Empresa
                 MessageBox.Show("Digite un valor de unitario válido");
                 return;
             }
+            if (precio < 0)
+            {
+                MessageBox.Show("Valores negativos no validos");
+                textbox_unitvalue.Focus();
+                return;
+
+            }
             bool isquantity = double.TryParse(textbox_quantity.Text, out cantidad);
             if (!isquantity)
             {
                 MessageBox.Show("Digite un valor de cantidad válido");
+                return;
+            }
+            if (cantidad < 0)
+            {
+                MessageBox.Show("Valores negativos no validos");
+                textbox_unitvalue.Focus();
                 return;
             }
 
@@ -143,12 +156,7 @@ namespace Aplicativo_Empresa
                 textbox_phone.Focus();
                 return;
             }
-            if (!re.IsMatch(textbox_adress.Text))
-            {
-                MessageBox.Show("La direccion sólo debe tener caracteres especiales ");
-                textbox_adress.Focus();
-                return;
-            }
+    
             if (!re.IsMatch(textbox_product.Text))
             {
                 MessageBox.Show("El nombre serial del producto sólo debe tener caracteres especiales");
@@ -175,41 +183,26 @@ namespace Aplicativo_Empresa
             labeltext_total.Content = precioFinal;
             
 
+
             //Instanciar Objeto
             Factura_Compra newFac = new Factura_Compra(textbox_factura.Text,textbox_client.Text,textbox_asistent.Text,textbox_adress.Text,textbox_phone.Text,precioFinal);
-            MessageBox.Show(newFac.ToString());
+            MessageBox.Show("Factura Guardada");
             fa_compra.Add(newFac);
+            string registroJSON = JsonConvert.SerializeObject(fa_compra);
 
 
             //guardar el registro
-            string registroJSON = JsonConvert.SerializeObject(fa_compra);
-            File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + "\\Compra.json", registroJSON);
+            string path = @"Compra.json";
+            using(var tw=new StreamWriter(path, false))
+            {
+                tw.WriteLine(registroJSON.ToString());
+            }
+            //File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + "\\Compra.json", registroJSON);
 
         }
 
-        private void Button_cancel_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBoxResult result = MessageBox.Show("Realmente desea eliminar factura?", "Alerta", MessageBoxButton.OKCancel);
-            if (result == MessageBoxResult.OK)
-            {
-              
-                textbox_client.Clear();
-                textbox_asistent.Clear();
-                textbox_adress.Clear();
-                textbox_phone.Clear();
-                textbox_mark.Clear();
-                textbox_product.Clear();
-                textbox_descrip.Clear();
-                textbox_quantity.Clear();
-                textbox_unitvalue.Clear();
-                textbox_factura.Clear();
-
-            }
-            else
-            {
-                this.Close();
-            }
-        }
+        
+        
          
         
     }

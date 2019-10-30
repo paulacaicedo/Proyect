@@ -58,7 +58,7 @@ namespace Aplicativo_Empresa
                 MessageBox.Show("El nombre del asistente no debe estar vacio ");
                 return;
             }
-            if (textbox_place.Text.Trim().Length == 0)
+            if (textbox_adress.Text.Trim().Length == 0)
             {
                 MessageBox.Show("El lugar no debe estar vacio ");
                 return;
@@ -76,6 +76,11 @@ namespace Aplicativo_Empresa
             if (textbox_finalecompromise.Text.Trim().Length == 0)
             {
                 MessageBox.Show("Los Compromisos no debe de estar vacio ");
+                return;
+            }
+            if (Textbox_phone.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("El telefono no debe estar vacio ");
                 return;
             }
             Regex r = new Regex("^[a-zA-Z\\s]*$");
@@ -103,35 +108,88 @@ namespace Aplicativo_Empresa
                 return;
             }
 
-            ReporteVisitas newVisit = new ReporteVisitas(date,hour,textbox_client.Text.ToString(),textbox_asistent.Text.ToString(),textbox_topic.Text.ToString(),textbox_place.Text.ToString());
-            reporteLlegada.Add(newVisit);
-            MessageBox.Show(newVisit.ToString());
+            if (comboBox_seller.SelectedIndex == 0)
+            {
+                ReporteVisitas newVisit = new ReporteVisitas(date, hour, "Yolima Serrano", textbox_client.Text.ToString(), textbox_asistent.Text.ToString(), textbox_topic.Text.ToString(), Textbox_phone.Text.ToString(), textbox_adress.Text.ToString());
+                MessageBox.Show("Reporte Guardado");
+                reporteLlegada.Add(newVisit);
+                string registroJSON = JsonConvert.SerializeObject(reporteLlegada);
 
-            string registroJSON = JsonConvert.SerializeObject(reporteLlegada);
-            File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + "\\Reporte.json", registroJSON);
+
+                string path = @"ReporteLlegada.json";
+                using (var tw = new StreamWriter(path, false))
+                {
+                    tw.WriteLine(registroJSON.ToString());
+                }
+                
+
+            }
+
+            if (comboBox_seller.SelectedIndex == 1)
+            {
+                ReporteVisitas newVisit = new ReporteVisitas(date, hour, "Sergio Monsalve", textbox_client.Text.ToString(), textbox_asistent.Text.ToString(), textbox_topic.Text.ToString(), Textbox_phone.Text.ToString(), textbox_adress.Text.ToString());
+                MessageBox.Show("Reporte Guardado");
+                reporteLlegada.Add(newVisit);
+                string registroJSON = JsonConvert.SerializeObject(reporteLlegada);
 
 
+                string path = @"ReporteLlegada.json";
+                using (var tw = new StreamWriter(path, false))
+                {
+                    tw.WriteLine(registroJSON.ToString());
+                }
+
+            }
+            if (comboBox_seller.SelectedIndex == 2)
+            {
+                ReporteVisitas newVisit = new ReporteVisitas(date, hour, "Erika Calderon", textbox_client.Text.ToString(), textbox_asistent.Text.ToString(), textbox_topic.Text.ToString(), Textbox_phone.Text.ToString(), textbox_adress.Text.ToString());
+                MessageBox.Show("Reporte Guardado");
+                reporteLlegada.Add(newVisit);
+                string registroJSON = JsonConvert.SerializeObject(reporteLlegada);
+
+
+                string path = @"ReporteLlegada.json";
+                using (var tw = new StreamWriter(path, false))
+                {
+                    tw.WriteLine(registroJSON.ToString());
+                }
+
+            }
+            if (comboBox_seller.SelectedIndex == 3)
+            {
+                ReporteVisitas newVisit = new ReporteVisitas(date, hour, "Viviana Sierra", textbox_client.Text.ToString(), textbox_asistent.Text.ToString(),textbox_topic.Text.ToString(), Textbox_phone.Text.ToString(), textbox_adress.Text.ToString());
+                MessageBox.Show(newVisit.ToString());
+                MessageBox.Show("Reporte Guardado");
+                reporteLlegada.Add(newVisit);
+                string registroJSON = JsonConvert.SerializeObject(reporteLlegada);
+
+
+                string path = @"ReporteLlegada.json";
+                using (var tw = new StreamWriter(path, false))
+                {
+                    tw.WriteLine(registroJSON.ToString());
+                }
+
+            }
+            if (comboBox_seller.SelectedIndex == 4)
+            {
+                ReporteVisitas newVisit = new ReporteVisitas(date, hour, "Luisa Monsalve", textbox_client.Text.ToString(), textbox_asistent.Text.ToString(), textbox_topic.Text.ToString(), Textbox_phone.Text.ToString(), textbox_adress.Text.ToString());
+                MessageBox.Show(newVisit.ToString());
+                MessageBox.Show("Reporte Guardado");
+                reporteLlegada.Add(newVisit);
+                string registroJSON = JsonConvert.SerializeObject(reporteLlegada);
+
+
+                string path = @"ReporteLlegada.json";
+                using (var tw = new StreamWriter(path, false))
+                {
+                    tw.WriteLine(registroJSON.ToString());
+                }
+
+            }
 
         }
 
-        private void Button_cancel_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBoxResult result = MessageBox.Show("Realmente desea eliminar la planilla?", "Alerta", MessageBoxButton.OKCancel);
-            if (result == MessageBoxResult.OK)
-            {
-                textbox_asistent.Clear();
-                textbox_client.Clear();
-                textbox_finalecompromise.Clear();
-                textbox_place.Clear();
-                textbox_finalreport.Clear();
-                textbox_topic.Clear();
-
-            }
-            else
-            {
-                this.Close();
-            }
-
-        }
+  
     }
 }

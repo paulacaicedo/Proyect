@@ -14,15 +14,14 @@
             </Grid.ColumnDefinitions>
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FF686868" Offset="0"/>
-                    <GradientStop Color="#FF1F1B1B" Offset="1"/>
+                    <GradientStop Color="#FF8C8D8F" Offset="0"/>
+                    <GradientStop Color="#FF6A6B6E" Offset="1"/>
                 </LinearGradientBrush>
             </Grid.Background>
             <Label Content="INFORME DE COMPRA" HorizontalAlignment="Left" Margin="249,12,0,0" VerticalAlignment="Top" Width="323" FontFamily="Times New Roman" FontSize="25"/>
             <Image Margin="10,10,501,332" Source="SM.png" Stretch="Fill"/>
-            <Label Content="Lista de Clientes" HorizontalAlignment="Left" Margin="124,53,0,0" VerticalAlignment="Top" Width="120" FontFamily="Times New Roman" FontSize="15" Height="36"/>
             <Button x:Name="button_atras" Content="Atrás" HorizontalAlignment="Left" Margin="82,0,0,386" Width="75" FontFamily="Times New Roman" FontSize="15" Click="Button_Click" Height="23" VerticalAlignment="Bottom" Grid.Column="1"/>
-            <DataGrid x:Name="datagrid_client" HorizontalAlignment="Left" Height="257" Margin="65,113,0,0" VerticalAlignment="Top" Width="667" RowHeight="30" ColumnWidth="100" Grid.ColumnSpan="2" />
+            <DataGrid x:Name="datagrid_client"  IsReadOnly="True" HorizontalAlignment="Left" Height="257" Margin="65,113,0,0" VerticalAlignment="Top" Width="667" RowHeight="30" ColumnWidth="*" Grid.ColumnSpan="2" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserSortColumns="False" Background="White" RowBackground="{DynamicResource {x:Static SystemColors.ControlDarkBrushKey}}" />
         </Grid>
 
     </Grid>

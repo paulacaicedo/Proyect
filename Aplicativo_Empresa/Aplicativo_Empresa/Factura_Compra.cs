@@ -6,7 +6,7 @@ using System.Text;
 namespace Aplicativo_Empresa
 {
 
-    public class Factura_Compra : Cliente
+    public class Factura_Compra : DocumentoBase
     {
        
         private string totalCompra;
@@ -27,7 +27,7 @@ namespace Aplicativo_Empresa
 
         public override string ToString()
         {
-            return base.ToString()+ string.Format("{{0}\t{1:C2}",NumeroFactura,TotalCompra);
+            return base.ToString()+ string.Format("{0}\t{1}\t{2}\t{3}\t{4}\t{5:C2}",NumeroFactura,NombreEmpresa,Contacto,Telefono,Direccion,TotalCompra);
         }
 
     }

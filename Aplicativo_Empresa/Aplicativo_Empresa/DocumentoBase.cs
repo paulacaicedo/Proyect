@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Aplicativo_Empresa
 {
-    public class Cliente
+    public class DocumentoBase
     {
         
         private string nombreEmpresa;
@@ -13,8 +13,8 @@ namespace Aplicativo_Empresa
         private string telefono;
         private string direccion;
 
-        public Cliente() { }
-        public Cliente(String nombreEmpresa, string contacto, string telefono, string direccion)
+        public DocumentoBase() { }
+        public DocumentoBase(String nombreEmpresa, string contacto, string telefono, string direccion)
         {
             this.nombreEmpresa = nombreEmpresa;
             this.contacto = contacto;
@@ -22,7 +22,7 @@ namespace Aplicativo_Empresa
             this.Direccion = direccion;
         }
 
-        public Cliente(string nombreEmpresa,string contacto)
+        public DocumentoBase(string nombreEmpresa,string contacto)
         {
             this.nombreEmpresa = nombreEmpresa;
             this.contacto = contacto;
@@ -35,8 +35,7 @@ namespace Aplicativo_Empresa
 
         public override string ToString()
         {
-            return string.Format("{0}\t{1}",NombreEmpresa,Contacto);
-            
+            return base.ToString();
         }
     }
 }

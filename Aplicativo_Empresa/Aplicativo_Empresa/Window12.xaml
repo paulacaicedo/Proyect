@@ -10,15 +10,15 @@
         <Grid>
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FF686868" Offset="0"/>
-                    <GradientStop Color="#FF1F1B1B" Offset="1"/>
+                    <GradientStop Color="#FF8C8D8F"/>
+                    <GradientStop Color="#FF6A6B6E" Offset="1"/>
                 </LinearGradientBrush>
             </Grid.Background>
-            <Label Content="INFORME DE SERVICIO" HorizontalAlignment="Left" Margin="285,30,0,0" VerticalAlignment="Top" Width="288" FontFamily="Times New Roman" FontSize="25"/>
-            <Image Margin="10,81,620,135" Source="SM.png" Stretch="Fill"/>
+            <Label Content="INFORME DE SERVICIO" HorizontalAlignment="Left" Margin="234,42,0,0" VerticalAlignment="Top" Width="297" FontFamily="Times New Roman" FontSize="25"/>
+            <Image Margin="10,0,685,315" Source="SM.png" Stretch="Fill"/>
 
             <Button x:Name="button_atras" Content="Atrás" HorizontalAlignment="Left" Margin="678,10,0,0" VerticalAlignment="Top" Width="75" Height="23" FontFamily="Times New Roman" FontSize="15" Click="Button_atras_Click"/>
-            <DataGrid x:Name="datagrid_service" HorizontalAlignment="Left" Height="303" Margin="194,81,0,0" VerticalAlignment="Top" Width="559"/>
+            <DataGrid x:Name="datagrid_service"  IsReadOnly="True" HorizontalAlignment="Left" Height="275" Margin="40,125,0,0" VerticalAlignment="Top" Width="713" ColumnWidth="*" CanUserResizeColumns="False" CanUserReorderColumns="False" CanUserSortColumns="False" AlternatingRowBackground="#FF8D8888"  />
         </Grid>
 
     </Grid>

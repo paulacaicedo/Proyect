@@ -29,7 +29,6 @@ namespace Aplicativo_Empresa
             using (StreamReader r = new StreamReader(archivo))
             {
                 var ArchivoJSON = r.ReadToEnd();
-                MessageBox.Show("Así llega del archivo Json: \n" + ArchivoJSON.ToString());
                 fa_compra = JsonConvert.DeserializeObject<List<Factura_Compra>>(ArchivoJSON);
 
 

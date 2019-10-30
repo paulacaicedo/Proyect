@@ -26,6 +26,7 @@ namespace Aplicativo_Empresa
         public Window12()
         {
             InitializeComponent();
+            LlenarData();
             
         }
 
@@ -36,10 +37,7 @@ namespace Aplicativo_Empresa
             using (StreamReader r = new StreamReader(archivo))
             {
                 var ArchivoJSON = r.ReadToEnd();
-                MessageBox.Show("Así llega del archivo Json: \n" + ArchivoJSON.ToString());
                 fa_servicios = JsonConvert.DeserializeObject<List<Factura_Servicios>>(ArchivoJSON);
-
-
             }
             return fa_servicios;
         }

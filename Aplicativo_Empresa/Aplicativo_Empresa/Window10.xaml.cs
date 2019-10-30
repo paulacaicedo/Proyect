@@ -45,8 +45,6 @@ namespace Aplicativo_Empresa
             
         }
 
-
-
         private void Button_guardar_Click(object sender, RoutedEventArgs e)
         {
             //Validacion Campos Vacios
@@ -129,6 +127,13 @@ namespace Aplicativo_Empresa
                 MessageBox.Show("Digite un valor de unitario válido");
                 return;
             }
+            if (precio < 0)
+            {
+                MessageBox.Show("Valores negativos no validos");
+                textbox_totalprice.Focus();
+                return;
+
+            }
 
             bool isquantity = double.TryParse(textbox_quantity.Text, out cantidad);
             if (!isquantity)
@@ -136,10 +141,23 @@ namespace Aplicativo_Empresa
                 MessageBox.Show("Digite un valor de cantidad válido");
                 return;
             }
+            if (cantidad < 0)
+            {
+                MessageBox.Show("Valores negativos no validos");
+                textbox_quantity.Focus();
+                return;
+
+            }
             bool isCost = double.TryParse(textbox_cost.Text, out costo);
             if (!isCost)
             {
                 MessageBox.Show("Digite un valor de costo válido");
+                return;
+            }
+            if (costo < 0)
+            {
+                MessageBox.Show("Valores negativos no validos");
+                textbox_cost.Focus();
                 return;
             }
 
@@ -180,48 +198,27 @@ namespace Aplicativo_Empresa
             costo += precio;
             total = Convert.ToString(costo);
             label_final.Content = total;
+            
 
             //Instanciar objeto
-            Factura_Servicios newFacSer = new Factura_Servicios(date,textbox_client.Text,textbox_asistent.Text, textbox_phone.Text,textbox_adress.Text,textbox_product.Text,costo);
-            MessageBox.Show(newFacSer.ToString());
+            Factura_Servicios newFacSer = new Factura_Servicios(date,textbox_client.Text,textbox_asistent.Text, textbox_phone.Text,textbox_adress.Text,textbox_product.Text,total);
+            MessageBox.Show("Factura Guardada");
             fa_servicios.Add(newFacSer);
-
-            //guardar el registro
-
             string registroJSON = JsonConvert.SerializeObject(fa_servicios);
-            File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + "\\Servicios.json", registroJSON);
+
+
+            string path = @"Servicios.json";
+            using (var tw = new StreamWriter(path, false))
+            {
+                tw.WriteLine(registroJSON.ToString());
+            }
         }
 
         
         
  
 
-        private void Button_cancel_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBoxResult result = MessageBox.Show("Realmente desea eliminar la plantilla?", "Alerta", MessageBoxButton.OKCancel);
-            if (result == MessageBoxResult.OK)
-            {
-
-                textbox_client.Clear();
-                textbox_asistent.Clear();
-                textbox_adress.Clear();
-                textbox_phone.Clear();
-                textbox_product.Clear();
-                textbox_descrip.Clear();
-                textbox_quantity.Clear();
-                textbox_factura.Clear();
-                textbox_materials.Clear();
-                textbox_cost.Clear();
-                textbox_descripcost.Clear();
-                textbox_dateservice.Clear();
-                textbox_timeservice.Clear();
-                textbox_duration.Clear();
-                textbox_totalprice.Clear();
-            }
-            else
-            {
-                this.Close();
-            }
-        }
+      
+        
     }
 }

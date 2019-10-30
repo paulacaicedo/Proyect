@@ -6,36 +6,35 @@ using System.Threading.Tasks;
 
 namespace Aplicativo_Empresa
 {
-    class ReporteVisitas : Cliente
+    class ReporteVisitas : DocumentoBase
     {
-
+        private string vendedor;
         private string date;
         private string hour;
         private string temaVisita;
-        private string lugar;
-
-        private List<Vendedor> vendedores;
+        
+        
 
         public ReporteVisitas() : base() { }
 
-        public ReporteVisitas(string date, string hour, string nombreEmpresa, string contacto, string temaVisita, string lugar)
-            : base(nombreEmpresa,contacto)
+        public ReporteVisitas(string date, string hour, string vendedor, string nombreEmpresa, string contacto, string temaVisita,string telefono,string direccion)
+            : base(nombreEmpresa,contacto,telefono,direccion)
         {
+            this.Vendedor = vendedor;
             this.Date = date;
             this.Hour = hour;
             this.TemaVisita = temaVisita;
-            this.Lugar = lugar;
+            
         }
 
         public string Date { get => date; set => date = value; }
         public string Hour { get => hour; set => hour = value; }
         public string TemaVisita { get => temaVisita; set => temaVisita = value; }
-        public string Lugar { get => lugar; set => lugar = value; }
-
+        public string Vendedor { get => vendedor; set => vendedor = value; }
 
         public override string ToString()
         {
-            return base.ToString() + string.Format("{0}\t{1}\t{2}\t{3}", Date, Hour, TemaVisita, Lugar);
+            return base.ToString() + string.Format("{0}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}\t{7}", Date, Hour,Vendedor,NombreEmpresa,Contacto,TemaVisita,Direccion,Telefono);
         }
     }
 }

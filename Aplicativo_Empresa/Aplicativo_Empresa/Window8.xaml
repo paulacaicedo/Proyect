@@ -10,8 +10,8 @@
         <Grid RenderTransformOrigin="0.434,0.895">
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FF737781" Offset="0"/>
-                    <GradientStop Color="#FF2A2C32" Offset="1"/>
+                    <GradientStop Color="#FF8C8D8F" Offset="0"/>
+                    <GradientStop Color="#FF6A6B6E" Offset="1"/>
                 </LinearGradientBrush>
             </Grid.Background>
             <Image Margin="10,10,672,298" Source="SM.png" Stretch="Fill"/>
@@ -51,20 +51,20 @@
                 <Label Content="Por comprar" FontFamily="Times New Roman" FontSize="15"/>
                 <Label Content="Comprado" FontFamily="Times New Roman" FontSize="15"/>
             </ComboBox>
-            <Button x:Name="button_guardar" Content="Guardar" HorizontalAlignment="Left" Margin="629,329,0,0" VerticalAlignment="Top" Width="124" Height="35" FontFamily="Times New Roman" FontSize="20" Click="Button_guardar_Click"/>
-            <Button x:Name="button_cancel" Content="Cancelar" HorizontalAlignment="Left" Margin="634,284,0,0" VerticalAlignment="Top" Width="119" Height="33" FontFamily="Times New Roman" FontSize="20" Click="Button_cancel_Click"/>
+            <Button x:Name="button_guardar" Content="Guardar" HorizontalAlignment="Left" Margin="629,280,0,0" VerticalAlignment="Top" Width="124" Height="35" FontFamily="Times New Roman" FontSize="20" Click="Button_guardar_Click"/>
             <Label x:Name="label_date" Content="" HorizontalAlignment="Left" Margin="193,40,0,0" VerticalAlignment="Top" Width="84" FontFamily="Times New Roman" FontSize="15" Background="#FFF0EAEA"/>
-            <TextBox x:Name="textbox_unitvalue" HorizontalAlignment="Left" Height="23" Margin="648,187,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-            <Label Content="Valor Unitario" HorizontalAlignment="Left" Margin="543,184,0,0" VerticalAlignment="Top" Width="98" FontFamily="Times New Roman" FontSize="15"/>
+            <TextBox x:Name="textbox_unitvalue" HorizontalAlignment="Left" Height="23" Margin="629,187,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <Label Content="Valor Unitario" HorizontalAlignment="Left" Margin="514,183,0,0" VerticalAlignment="Top" Width="98" FontFamily="Times New Roman" FontSize="15"/>
             <Label x:Name="labeltext_total" Content="" HorizontalAlignment="Left" Margin="457,280,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.163,-0.056" Width="141" Background="White"/>
             <Label x:Name="labeltext_beforeIva" Content="" HorizontalAlignment="Left" Margin="474,234,0,0" VerticalAlignment="Top" Width="124" Background="#FFF5EEEE"/>
-            <Label x:Name="label_iva" Content="" HorizontalAlignment="Left" Margin="678,234,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.068,0.433" Width="75" Background="#FFF9EEEE" FontFamily="Arial"/>
+            <Label x:Name="label_iva" Content="" HorizontalAlignment="Left" Margin="649,234,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.068,0.433" Width="75" Background="#FFF9EEEE" FontFamily="Arial"/>
             <ComboBox x:Name="comboBox_seller" HorizontalAlignment="Left" Margin="532,45,0,0" VerticalAlignment="Top" Width="221" FontFamily="Times New Roman" FontSize="15">
                 
                 <ComboBoxItem Content="Yolima Serrano" FontSize="15" FontFamily="Times New Roman"/>
                 <ComboBoxItem Content="Sergio Monsalve" FontSize="15" FontFamily="Times New Roman"/>
-                <ComboBoxItem Content="Erika" FontSize="15" FontFamily="Times New Roman"/>
-                <ComboBoxItem Content="Viviana" FontSize="15" FontFamily="Times New Roman"/>
+                <ComboBoxItem Content="Erika Calderon" FontSize="15" FontFamily="Times New Roman"/>
+                <ComboBoxItem Content="Viviana Sierra" FontSize="15" FontFamily="Times New Roman"/>
+                <ComboBoxItem Content="Luisa Monsalve" FontSize="15" FontFamily="Times New Roman"/>
             </ComboBox>
 
         </Grid>

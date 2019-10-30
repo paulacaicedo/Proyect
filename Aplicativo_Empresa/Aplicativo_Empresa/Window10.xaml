@@ -14,8 +14,8 @@
             </Grid.ColumnDefinitions>
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FF737781" Offset="0"/>
-                    <GradientStop Color="#FF2A2C32" Offset="1"/>
+                    <GradientStop Color="#FF8C8D8F" Offset="0"/>
+                    <GradientStop Color="#FF6A6B6E" Offset="1"/>
                 </LinearGradientBrush>
             </Grid.Background>
             <Image Margin="10,10,657.132,313" Source="SM.png" Stretch="Fill"/>
@@ -49,8 +49,7 @@
             <Label Content="Precio Total" HorizontalAlignment="Left" Margin="511,187,0,0" VerticalAlignment="Top" Width="93" FontFamily="Times New Roman" FontSize="15"/>
             <TextBox x:Name="textbox_materials" HorizontalAlignment="Left" Height="94" Margin="331,293,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" FontFamily="Arial"/>
             <Label Content="Materiales" HorizontalAlignment="Left" Margin="331,266,0,0" VerticalAlignment="Top" Width="126" FontFamily="Times New Roman" FontSize="15"/>
-            <Button x:Name="button_guardar" Content="Guardar" HorizontalAlignment="Left" Margin="563,381,0,0" Width="101" FontFamily="Times New Roman" FontSize="20" Click="Button_guardar_Click" Height="27" VerticalAlignment="Top"/>
-            <Button x:Name="button_cancel" Content="Cancelar" HorizontalAlignment="Left" Margin="678,381,0,0" VerticalAlignment="Top" Width="104" Height="27" FontFamily="Times New Roman" FontSize="20" Click="Button_cancel_Click" Grid.ColumnSpan="2"/>
+            <Button x:Name="button_guardar" Content="Guardar" HorizontalAlignment="Left" Margin="681,381,0,0" Width="101" FontFamily="Times New Roman" FontSize="20" Click="Button_guardar_Click" Height="27" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
             <TextBox x:Name="textbox_timeservice" HorizontalAlignment="Left" Height="27" Margin="150,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="73"/>
             <TextBox x:Name="textbox_duration" HorizontalAlignment="Left" Height="23" Margin="214,191,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="104"/>
             <Label Content="Descripcion de Costos" HorizontalAlignment="Left" Margin="526,266,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="15" Width="146"/>
@@ -59,11 +58,12 @@
             <Label Content="Precio Final" HorizontalAlignment="Left" Margin="581,234,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.136,0.548" FontFamily="Times New Roman" FontSize="15"/>
             <Label x:Name="label_final" HorizontalAlignment="Left" Height="27" Margin="669,234,0,0" VerticalAlignment="Top" Width="113" FontFamily="Arial" Background="#FFF0ECEC" Grid.ColumnSpan="2"/>
             <ComboBox x:Name="comboBox_seller" HorizontalAlignment="Left" Margin="529,45,0,0" VerticalAlignment="Top" Width="224" FontFamily="Times New Roman" FontSize="15">
-                
+
                 <ComboBoxItem Content="Yolima Serrano" FontSize="15" FontFamily="Times New Roman"/>
                 <ComboBoxItem Content="Sergio Monsalve" FontSize="15" FontFamily="Times New Roman"/>
-                <ComboBoxItem Content="Erika" FontSize="15" FontFamily="Times New Roman"/>
-                <ComboBoxItem Content="Viviana" FontSize="15" FontFamily="Times New Roman"/>
+                <ComboBoxItem Content="Erika Calderon" FontSize="15" FontFamily="Times New Roman"/>
+                <ComboBoxItem Content="Viviana Sierra" FontSize="15" FontFamily="Times New Roman"/>
+                <ComboBoxItem Content="Luisa Monsalve" FontSize="15" FontFamily="Times New Roman"/>
             </ComboBox>
 
         </Grid>
